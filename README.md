@@ -14,6 +14,7 @@ Esto no es un emulador ni una ROM pirata metida debajo de la gabardina. Es una c
 - **Los circuitos:** los 72 mapas, sus tiles, decorados, capas y un editor visual para no acabar montando la pista como un puesto del mercadillo.
 - **La chicharra:** las seis músicas del driver Sound Images v1.20, extraídas como secuencia nativa, MIDI, VGM y proyectos de Furnace Tracker.
 - **La parrafada:** 214 textos de menús, pilotos, planetas, tienda, finales y créditos en un único fichero editable.
+- **La entrada triunfal:** logos de Interplay y Blizzard, fondo del título y letras saltarinas, cada cosa en su PNG indexado y con su paleta.
 
 ## Antes de darle al botón gordo
 
@@ -40,6 +41,7 @@ python tools/export_samples.py
 python tools/export_all_tracks.py
 python tools/export_music.py --export
 python tools/export_texts.py
+python tools/export_intro.py
 ```
 
 Cada herramienta deja sus resultados en una carpeta separada. La ROM original se mira, pero no se soba: cualquier reinserción genera otra ROM y recalcula su checksum.

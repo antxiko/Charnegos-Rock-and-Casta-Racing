@@ -33,6 +33,9 @@ musicas/
 musicas_tracker/
 partidas/
 samples_wav/
+intro_png/*
+!intro_png/LEEME.md
+!intro_png/APLICAR_INTRO.cmd
 todos_los_circuitos/
 validation_bizhawk/
 textos/*
