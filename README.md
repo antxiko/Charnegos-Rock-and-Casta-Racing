@@ -70,17 +70,19 @@ Eso saca 214 cadenas en `textos/textos.json`. Abre `textos/EDITOR.html`, carga e
 
 Hay que respetar el ancho de cada pantalla porque esto es una Mega Drive, no una marquesina del Carrefour. El banco puede recolocarse automáticamente cuando una traducción crece y la fuente ya admite `Ñ` y vocales con tilde.
 
-## Aquí no se reparte género robado
+## El material del taller
 
-El repositorio contiene **código y documentación propia**. No incluye:
+El repositorio contiene las herramientas, la documentación y los gráficos editables extraídos: coches, pilotos, circuitos, tiles, capas y paletas. Así se puede colaborar directamente sin que cada colega tenga que repetir toda la extracción.
+
+No incluye bajo ningún concepto:
 
 - ROMs;
 - savestates;
-- gráficos extraídos;
+- parches IPS, BPS o Xdelta;
 - WAV, VGM, MIDI ni módulos Furnace generados;
-- ningún otro recurso original del juego.
+- savestates ni capturas temporales de emulador.
 
-Cada colega debe poner su propia ROM y generar el material en su máquina. Los scripts comprueban el SHA-256 de la versión europea conocida antes de tocar un solo byte. Si les das otra cosa, se plantan y te mandan a paseo antes de liarla parda.
+Cada colega debe poner su propia ROM para generar una versión modificada. Los scripts comprueban el SHA-256 de la versión europea conocida antes de tocar un solo byte. Si les das otra cosa, se plantan y te mandan a paseo antes de liarla parda.
 
 ## ¿Esto está probado o va con bridas?
 

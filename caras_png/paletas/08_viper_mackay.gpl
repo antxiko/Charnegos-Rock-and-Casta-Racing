@@ -1,0 +1,20 @@
+GIMP Palette
+Name: Viper Mackay
+Columns: 16
+#
+0 0 0 indice_00
+255 255 255 indice_01
+0 0 0 indice_02
+255 218 109 indice_03
+255 145 72 indice_04
+218 109 36 indice_05
+182 72 0 indice_06
+145 36 0 indice_07
+109 0 0 indice_08
+218 218 255 indice_09
+182 182 218 indice_10
+145 145 182 indice_11
+109 109 145 indice_12
+72 72 109 indice_13
+36 36 72 indice_14
+255 0 0 indice_15

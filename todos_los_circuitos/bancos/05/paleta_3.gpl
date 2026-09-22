@@ -1,0 +1,20 @@
+GIMP Palette
+Name: INFERNO
+Columns: 16
+#
+0 0 0 indice_0
+0 0 0 indice_1
+0 0 0 indice_2
+36 0 0 indice_3
+109 0 0 indice_4
+182 0 0 indice_5
+145 0 0 indice_6
+255 109 0 indice_7
+182 0 0 indice_8
+255 145 0 indice_9
+255 255 0 indice_10
+255 145 0 indice_11
+182 0 0 indice_12
+218 72 0 indice_13
+182 72 0 indice_14
+145 0 0 indice_15

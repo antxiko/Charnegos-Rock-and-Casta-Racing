@@ -1,0 +1,20 @@
+GIMP Palette
+Name: DRAKONIS
+Columns: 16
+#
+0 109 109 indice_0
+255 255 255 indice_1
+36 182 218 indice_2
+36 145 182 indice_3
+36 109 145 indice_4
+36 72 109 indice_5
+0 36 72 indice_6
+0 0 0 indice_7
+255 0 0 indice_8
+218 0 0 indice_9
+145 0 0 indice_10
+72 0 0 indice_11
+182 182 182 indice_12
+109 109 109 indice_13
+72 72 72 indice_14
+36 36 36 indice_15

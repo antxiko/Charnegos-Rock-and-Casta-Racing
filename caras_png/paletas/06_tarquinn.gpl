@@ -1,0 +1,20 @@
+GIMP Palette
+Name: Tarquinn
+Columns: 16
+#
+0 0 0 indice_00
+255 255 255 indice_01
+0 0 0 indice_02
+255 182 109 indice_03
+218 145 72 indice_04
+182 109 36 indice_05
+145 72 36 indice_06
+145 36 0 indice_07
+72 0 0 indice_08
+72 72 72 indice_09
+36 36 36 indice_10
+182 0 218 indice_11
+0 0 182 indice_12
+255 0 255 indice_13
+145 0 145 indice_14
+72 0 72 indice_15

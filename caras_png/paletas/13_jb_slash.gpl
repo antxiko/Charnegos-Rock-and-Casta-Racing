@@ -1,0 +1,20 @@
+GIMP Palette
+Name: J.B. Slash
+Columns: 16
+#
+0 0 0 indice_00
+255 182 0 indice_01
+255 145 0 indice_02
+255 72 0 indice_03
+218 0 0 indice_04
+145 0 0 indice_05
+109 0 0 indice_06
+72 0 0 indice_07
+0 0 0 indice_08
+255 255 218 indice_09
+182 182 145 indice_10
+109 72 72 indice_11
+36 0 0 indice_12
+0 0 0 indice_13
+218 0 218 indice_14
+72 0 72 indice_15

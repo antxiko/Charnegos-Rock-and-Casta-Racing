@@ -1,0 +1,1582 @@
+{
+  "rom_sha256": "b65b7de45420e7618fef1b9bef13076389fdf7e0da8dfec1de23f528dcd170cb",
+  "palette_offset": "0x6776",
+  "layout": "Two 48x24 bands, column-major tiles within each band",
+  "frames": [
+    {
+      "car": 1,
+      "frame": 0,
+      "rom_offset": "0xbf500",
+      "bytes": 1152,
+      "file": "coche_01\\vista_00.png"
+    },
+    {
+      "car": 1,
+      "frame": 1,
+      "rom_offset": "0xbf980",
+      "bytes": 1152,
+      "file": "coche_01\\vista_01.png"
+    },
+    {
+      "car": 1,
+      "frame": 2,
+      "rom_offset": "0xbfe00",
+      "bytes": 1152,
+      "file": "coche_01\\vista_02.png"
+    },
+    {
+      "car": 1,
+      "frame": 3,
+      "rom_offset": "0xc0280",
+      "bytes": 1152,
+      "file": "coche_01\\vista_03.png"
+    },
+    {
+      "car": 1,
+      "frame": 4,
+      "rom_offset": "0xc0700",
+      "bytes": 1152,
+      "file": "coche_01\\vista_04.png"
+    },
+    {
+      "car": 1,
+      "frame": 5,
+      "rom_offset": "0xc0b80",
+      "bytes": 1152,
+      "file": "coche_01\\vista_05.png"
+    },
+    {
+      "car": 1,
+      "frame": 6,
+      "rom_offset": "0xc1000",
+      "bytes": 1152,
+      "file": "coche_01\\vista_06.png"
+    },
+    {
+      "car": 1,
+      "frame": 7,
+      "rom_offset": "0xc1480",
+      "bytes": 1152,
+      "file": "coche_01\\vista_07.png"
+    },
+    {
+      "car": 1,
+      "frame": 8,
+      "rom_offset": "0xc1900",
+      "bytes": 1152,
+      "file": "coche_01\\vista_08.png"
+    },
+    {
+      "car": 1,
+      "frame": 9,
+      "rom_offset": "0xc1d80",
+      "bytes": 1152,
+      "file": "coche_01\\vista_09.png"
+    },
+    {
+      "car": 1,
+      "frame": 10,
+      "rom_offset": "0xc2200",
+      "bytes": 1152,
+      "file": "coche_01\\vista_10.png"
+    },
+    {
+      "car": 1,
+      "frame": 11,
+      "rom_offset": "0xc2680",
+      "bytes": 1152,
+      "file": "coche_01\\vista_11.png"
+    },
+    {
+      "car": 1,
+      "frame": 12,
+      "rom_offset": "0xc2b00",
+      "bytes": 1152,
+      "file": "coche_01\\vista_12.png"
+    },
+    {
+      "car": 1,
+      "frame": 13,
+      "rom_offset": "0xc2f80",
+      "bytes": 1152,
+      "file": "coche_01\\vista_13.png"
+    },
+    {
+      "car": 1,
+      "frame": 14,
+      "rom_offset": "0xc3400",
+      "bytes": 1152,
+      "file": "coche_01\\vista_14.png"
+    },
+    {
+      "car": 1,
+      "frame": 15,
+      "rom_offset": "0xc3880",
+      "bytes": 1152,
+      "file": "coche_01\\vista_15.png"
+    },
+    {
+      "car": 1,
+      "frame": 16,
+      "rom_offset": "0xc3d00",
+      "bytes": 1152,
+      "file": "coche_01\\vista_16.png"
+    },
+    {
+      "car": 1,
+      "frame": 17,
+      "rom_offset": "0xc4180",
+      "bytes": 1152,
+      "file": "coche_01\\vista_17.png"
+    },
+    {
+      "car": 1,
+      "frame": 18,
+      "rom_offset": "0xc4600",
+      "bytes": 1152,
+      "file": "coche_01\\vista_18.png"
+    },
+    {
+      "car": 1,
+      "frame": 19,
+      "rom_offset": "0xc4a80",
+      "bytes": 1152,
+      "file": "coche_01\\vista_19.png"
+    },
+    {
+      "car": 1,
+      "frame": 20,
+      "rom_offset": "0xc4f00",
+      "bytes": 1152,
+      "file": "coche_01\\vista_20.png"
+    },
+    {
+      "car": 1,
+      "frame": 21,
+      "rom_offset": "0xc5380",
+      "bytes": 1152,
+      "file": "coche_01\\vista_21.png"
+    },
+    {
+      "car": 1,
+      "frame": 22,
+      "rom_offset": "0xc5800",
+      "bytes": 1152,
+      "file": "coche_01\\vista_22.png"
+    },
+    {
+      "car": 1,
+      "frame": 23,
+      "rom_offset": "0xc5c80",
+      "bytes": 1152,
+      "file": "coche_01\\vista_23.png"
+    },
+    {
+      "car": 1,
+      "frame": 24,
+      "rom_offset": "0xc6100",
+      "bytes": 1152,
+      "file": "coche_01\\vista_24.png"
+    },
+    {
+      "car": 1,
+      "frame": 25,
+      "rom_offset": "0xc6580",
+      "bytes": 1152,
+      "file": "coche_01\\vista_25.png"
+    },
+    {
+      "car": 1,
+      "frame": 26,
+      "rom_offset": "0xc6a00",
+      "bytes": 1152,
+      "file": "coche_01\\vista_26.png"
+    },
+    {
+      "car": 1,
+      "frame": 27,
+      "rom_offset": "0xc6e80",
+      "bytes": 1152,
+      "file": "coche_01\\vista_27.png"
+    },
+    {
+      "car": 1,
+      "frame": 28,
+      "rom_offset": "0xc7300",
+      "bytes": 1152,
+      "file": "coche_01\\vista_28.png"
+    },
+    {
+      "car": 1,
+      "frame": 29,
+      "rom_offset": "0xc7780",
+      "bytes": 1152,
+      "file": "coche_01\\vista_29.png"
+    },
+    {
+      "car": 1,
+      "frame": 30,
+      "rom_offset": "0xc7c00",
+      "bytes": 1152,
+      "file": "coche_01\\vista_30.png"
+    },
+    {
+      "car": 1,
+      "frame": 31,
+      "rom_offset": "0xc8080",
+      "bytes": 1152,
+      "file": "coche_01\\vista_31.png"
+    },
+    {
+      "car": 1,
+      "frame": 32,
+      "rom_offset": "0xc8500",
+      "bytes": 1152,
+      "file": "coche_01\\vista_32.png"
+    },
+    {
+      "car": 1,
+      "frame": 33,
+      "rom_offset": "0xc8980",
+      "bytes": 1152,
+      "file": "coche_01\\vista_33.png"
+    },
+    {
+      "car": 1,
+      "frame": 34,
+      "rom_offset": "0xc8e00",
+      "bytes": 1152,
+      "file": "coche_01\\vista_34.png"
+    },
+    {
+      "car": 1,
+      "frame": 35,
+      "rom_offset": "0xc9280",
+      "bytes": 1152,
+      "file": "coche_01\\vista_35.png"
+    },
+    {
+      "car": 1,
+      "frame": 36,
+      "rom_offset": "0xc9700",
+      "bytes": 1152,
+      "file": "coche_01\\vista_36.png"
+    },
+    {
+      "car": 1,
+      "frame": 37,
+      "rom_offset": "0xc9b80",
+      "bytes": 1152,
+      "file": "coche_01\\vista_37.png"
+    },
+    {
+      "car": 1,
+      "frame": 38,
+      "rom_offset": "0xca000",
+      "bytes": 1152,
+      "file": "coche_01\\vista_38.png"
+    },
+    {
+      "car": 1,
+      "frame": 39,
+      "rom_offset": "0xca480",
+      "bytes": 1152,
+      "file": "coche_01\\vista_39.png"
+    },
+    {
+      "car": 1,
+      "frame": 40,
+      "rom_offset": "0xca900",
+      "bytes": 1152,
+      "file": "coche_01\\vista_40.png"
+    },
+    {
+      "car": 1,
+      "frame": 41,
+      "rom_offset": "0xcad80",
+      "bytes": 1152,
+      "file": "coche_01\\vista_41.png"
+    },
+    {
+      "car": 1,
+      "frame": 42,
+      "rom_offset": "0xcb200",
+      "bytes": 1152,
+      "file": "coche_01\\vista_42.png"
+    },
+    {
+      "car": 1,
+      "frame": 43,
+      "rom_offset": "0xcb680",
+      "bytes": 1152,
+      "file": "coche_01\\vista_43.png"
+    },
+    {
+      "car": 1,
+      "frame": 44,
+      "rom_offset": "0xcbb00",
+      "bytes": 1152,
+      "file": "coche_01\\vista_44.png"
+    },
+    {
+      "car": 2,
+      "frame": 0,
+      "rom_offset": "0xcbf80",
+      "bytes": 1152,
+      "file": "coche_02\\vista_00.png"
+    },
+    {
+      "car": 2,
+      "frame": 1,
+      "rom_offset": "0xcc400",
+      "bytes": 1152,
+      "file": "coche_02\\vista_01.png"
+    },
+    {
+      "car": 2,
+      "frame": 2,
+      "rom_offset": "0xcc880",
+      "bytes": 1152,
+      "file": "coche_02\\vista_02.png"
+    },
+    {
+      "car": 2,
+      "frame": 3,
+      "rom_offset": "0xccd00",
+      "bytes": 1152,
+      "file": "coche_02\\vista_03.png"
+    },
+    {
+      "car": 2,
+      "frame": 4,
+      "rom_offset": "0xcd180",
+      "bytes": 1152,
+      "file": "coche_02\\vista_04.png"
+    },
+    {
+      "car": 2,
+      "frame": 5,
+      "rom_offset": "0xcd600",
+      "bytes": 1152,
+      "file": "coche_02\\vista_05.png"
+    },
+    {
+      "car": 2,
+      "frame": 6,
+      "rom_offset": "0xcda80",
+      "bytes": 1152,
+      "file": "coche_02\\vista_06.png"
+    },
+    {
+      "car": 2,
+      "frame": 7,
+      "rom_offset": "0xcdf00",
+      "bytes": 1152,
+      "file": "coche_02\\vista_07.png"
+    },
+    {
+      "car": 2,
+      "frame": 8,
+      "rom_offset": "0xce380",
+      "bytes": 1152,
+      "file": "coche_02\\vista_08.png"
+    },
+    {
+      "car": 2,
+      "frame": 9,
+      "rom_offset": "0xce800",
+      "bytes": 1152,
+      "file": "coche_02\\vista_09.png"
+    },
+    {
+      "car": 2,
+      "frame": 10,
+      "rom_offset": "0xcec80",
+      "bytes": 1152,
+      "file": "coche_02\\vista_10.png"
+    },
+    {
+      "car": 2,
+      "frame": 11,
+      "rom_offset": "0xcf100",
+      "bytes": 1152,
+      "file": "coche_02\\vista_11.png"
+    },
+    {
+      "car": 2,
+      "frame": 12,
+      "rom_offset": "0xcf580",
+      "bytes": 1152,
+      "file": "coche_02\\vista_12.png"
+    },
+    {
+      "car": 2,
+      "frame": 13,
+      "rom_offset": "0xcfa00",
+      "bytes": 1152,
+      "file": "coche_02\\vista_13.png"
+    },
+    {
+      "car": 2,
+      "frame": 14,
+      "rom_offset": "0xcfe80",
+      "bytes": 1152,
+      "file": "coche_02\\vista_14.png"
+    },
+    {
+      "car": 2,
+      "frame": 15,
+      "rom_offset": "0xd0300",
+      "bytes": 1152,
+      "file": "coche_02\\vista_15.png"
+    },
+    {
+      "car": 2,
+      "frame": 16,
+      "rom_offset": "0xd0780",
+      "bytes": 1152,
+      "file": "coche_02\\vista_16.png"
+    },
+    {
+      "car": 2,
+      "frame": 17,
+      "rom_offset": "0xd0c00",
+      "bytes": 1152,
+      "file": "coche_02\\vista_17.png"
+    },
+    {
+      "car": 2,
+      "frame": 18,
+      "rom_offset": "0xd1080",
+      "bytes": 1152,
+      "file": "coche_02\\vista_18.png"
+    },
+    {
+      "car": 2,
+      "frame": 19,
+      "rom_offset": "0xd1500",
+      "bytes": 1152,
+      "file": "coche_02\\vista_19.png"
+    },
+    {
+      "car": 2,
+      "frame": 20,
+      "rom_offset": "0xd1980",
+      "bytes": 1152,
+      "file": "coche_02\\vista_20.png"
+    },
+    {
+      "car": 2,
+      "frame": 21,
+      "rom_offset": "0xd1e00",
+      "bytes": 1152,
+      "file": "coche_02\\vista_21.png"
+    },
+    {
+      "car": 2,
+      "frame": 22,
+      "rom_offset": "0xd2280",
+      "bytes": 1152,
+      "file": "coche_02\\vista_22.png"
+    },
+    {
+      "car": 2,
+      "frame": 23,
+      "rom_offset": "0xd2700",
+      "bytes": 1152,
+      "file": "coche_02\\vista_23.png"
+    },
+    {
+      "car": 2,
+      "frame": 24,
+      "rom_offset": "0xd2b80",
+      "bytes": 1152,
+      "file": "coche_02\\vista_24.png"
+    },
+    {
+      "car": 2,
+      "frame": 25,
+      "rom_offset": "0xd3000",
+      "bytes": 1152,
+      "file": "coche_02\\vista_25.png"
+    },
+    {
+      "car": 2,
+      "frame": 26,
+      "rom_offset": "0xd3480",
+      "bytes": 1152,
+      "file": "coche_02\\vista_26.png"
+    },
+    {
+      "car": 2,
+      "frame": 27,
+      "rom_offset": "0xd3900",
+      "bytes": 1152,
+      "file": "coche_02\\vista_27.png"
+    },
+    {
+      "car": 2,
+      "frame": 28,
+      "rom_offset": "0xd3d80",
+      "bytes": 1152,
+      "file": "coche_02\\vista_28.png"
+    },
+    {
+      "car": 2,
+      "frame": 29,
+      "rom_offset": "0xd4200",
+      "bytes": 1152,
+      "file": "coche_02\\vista_29.png"
+    },
+    {
+      "car": 2,
+      "frame": 30,
+      "rom_offset": "0xd4680",
+      "bytes": 1152,
+      "file": "coche_02\\vista_30.png"
+    },
+    {
+      "car": 2,
+      "frame": 31,
+      "rom_offset": "0xd4b00",
+      "bytes": 1152,
+      "file": "coche_02\\vista_31.png"
+    },
+    {
+      "car": 2,
+      "frame": 32,
+      "rom_offset": "0xd4f80",
+      "bytes": 1152,
+      "file": "coche_02\\vista_32.png"
+    },
+    {
+      "car": 2,
+      "frame": 33,
+      "rom_offset": "0xd5400",
+      "bytes": 1152,
+      "file": "coche_02\\vista_33.png"
+    },
+    {
+      "car": 2,
+      "frame": 34,
+      "rom_offset": "0xd5880",
+      "bytes": 1152,
+      "file": "coche_02\\vista_34.png"
+    },
+    {
+      "car": 2,
+      "frame": 35,
+      "rom_offset": "0xd5d00",
+      "bytes": 1152,
+      "file": "coche_02\\vista_35.png"
+    },
+    {
+      "car": 2,
+      "frame": 36,
+      "rom_offset": "0xd6180",
+      "bytes": 1152,
+      "file": "coche_02\\vista_36.png"
+    },
+    {
+      "car": 2,
+      "frame": 37,
+      "rom_offset": "0xd6600",
+      "bytes": 1152,
+      "file": "coche_02\\vista_37.png"
+    },
+    {
+      "car": 2,
+      "frame": 38,
+      "rom_offset": "0xd6a80",
+      "bytes": 1152,
+      "file": "coche_02\\vista_38.png"
+    },
+    {
+      "car": 2,
+      "frame": 39,
+      "rom_offset": "0xd6f00",
+      "bytes": 1152,
+      "file": "coche_02\\vista_39.png"
+    },
+    {
+      "car": 2,
+      "frame": 40,
+      "rom_offset": "0xd7380",
+      "bytes": 1152,
+      "file": "coche_02\\vista_40.png"
+    },
+    {
+      "car": 2,
+      "frame": 41,
+      "rom_offset": "0xd7800",
+      "bytes": 1152,
+      "file": "coche_02\\vista_41.png"
+    },
+    {
+      "car": 2,
+      "frame": 42,
+      "rom_offset": "0xd7c80",
+      "bytes": 1152,
+      "file": "coche_02\\vista_42.png"
+    },
+    {
+      "car": 2,
+      "frame": 43,
+      "rom_offset": "0xd8100",
+      "bytes": 1152,
+      "file": "coche_02\\vista_43.png"
+    },
+    {
+      "car": 2,
+      "frame": 44,
+      "rom_offset": "0xd8580",
+      "bytes": 1152,
+      "file": "coche_02\\vista_44.png"
+    },
+    {
+      "car": 3,
+      "frame": 0,
+      "rom_offset": "0xd8a00",
+      "bytes": 1152,
+      "file": "coche_03\\vista_00.png"
+    },
+    {
+      "car": 3,
+      "frame": 1,
+      "rom_offset": "0xd8e80",
+      "bytes": 1152,
+      "file": "coche_03\\vista_01.png"
+    },
+    {
+      "car": 3,
+      "frame": 2,
+      "rom_offset": "0xd9300",
+      "bytes": 1152,
+      "file": "coche_03\\vista_02.png"
+    },
+    {
+      "car": 3,
+      "frame": 3,
+      "rom_offset": "0xd9780",
+      "bytes": 1152,
+      "file": "coche_03\\vista_03.png"
+    },
+    {
+      "car": 3,
+      "frame": 4,
+      "rom_offset": "0xd9c00",
+      "bytes": 1152,
+      "file": "coche_03\\vista_04.png"
+    },
+    {
+      "car": 3,
+      "frame": 5,
+      "rom_offset": "0xda080",
+      "bytes": 1152,
+      "file": "coche_03\\vista_05.png"
+    },
+    {
+      "car": 3,
+      "frame": 6,
+      "rom_offset": "0xda500",
+      "bytes": 1152,
+      "file": "coche_03\\vista_06.png"
+    },
+    {
+      "car": 3,
+      "frame": 7,
+      "rom_offset": "0xda980",
+      "bytes": 1152,
+      "file": "coche_03\\vista_07.png"
+    },
+    {
+      "car": 3,
+      "frame": 8,
+      "rom_offset": "0xdae00",
+      "bytes": 1152,
+      "file": "coche_03\\vista_08.png"
+    },
+    {
+      "car": 3,
+      "frame": 9,
+      "rom_offset": "0xdb280",
+      "bytes": 1152,
+      "file": "coche_03\\vista_09.png"
+    },
+    {
+      "car": 3,
+      "frame": 10,
+      "rom_offset": "0xdb700",
+      "bytes": 1152,
+      "file": "coche_03\\vista_10.png"
+    },
+    {
+      "car": 3,
+      "frame": 11,
+      "rom_offset": "0xdbb80",
+      "bytes": 1152,
+      "file": "coche_03\\vista_11.png"
+    },
+    {
+      "car": 3,
+      "frame": 12,
+      "rom_offset": "0xdc000",
+      "bytes": 1152,
+      "file": "coche_03\\vista_12.png"
+    },
+    {
+      "car": 3,
+      "frame": 13,
+      "rom_offset": "0xdc480",
+      "bytes": 1152,
+      "file": "coche_03\\vista_13.png"
+    },
+    {
+      "car": 3,
+      "frame": 14,
+      "rom_offset": "0xdc900",
+      "bytes": 1152,
+      "file": "coche_03\\vista_14.png"
+    },
+    {
+      "car": 3,
+      "frame": 15,
+      "rom_offset": "0xdcd80",
+      "bytes": 1152,
+      "file": "coche_03\\vista_15.png"
+    },
+    {
+      "car": 3,
+      "frame": 16,
+      "rom_offset": "0xdd200",
+      "bytes": 1152,
+      "file": "coche_03\\vista_16.png"
+    },
+    {
+      "car": 3,
+      "frame": 17,
+      "rom_offset": "0xdd680",
+      "bytes": 1152,
+      "file": "coche_03\\vista_17.png"
+    },
+    {
+      "car": 3,
+      "frame": 18,
+      "rom_offset": "0xddb00",
+      "bytes": 1152,
+      "file": "coche_03\\vista_18.png"
+    },
+    {
+      "car": 3,
+      "frame": 19,
+      "rom_offset": "0xddf80",
+      "bytes": 1152,
+      "file": "coche_03\\vista_19.png"
+    },
+    {
+      "car": 3,
+      "frame": 20,
+      "rom_offset": "0xde400",
+      "bytes": 1152,
+      "file": "coche_03\\vista_20.png"
+    },
+    {
+      "car": 3,
+      "frame": 21,
+      "rom_offset": "0xde880",
+      "bytes": 1152,
+      "file": "coche_03\\vista_21.png"
+    },
+    {
+      "car": 3,
+      "frame": 22,
+      "rom_offset": "0xded00",
+      "bytes": 1152,
+      "file": "coche_03\\vista_22.png"
+    },
+    {
+      "car": 3,
+      "frame": 23,
+      "rom_offset": "0xdf180",
+      "bytes": 1152,
+      "file": "coche_03\\vista_23.png"
+    },
+    {
+      "car": 3,
+      "frame": 24,
+      "rom_offset": "0xdf600",
+      "bytes": 1152,
+      "file": "coche_03\\vista_24.png"
+    },
+    {
+      "car": 3,
+      "frame": 25,
+      "rom_offset": "0xdfa80",
+      "bytes": 1152,
+      "file": "coche_03\\vista_25.png"
+    },
+    {
+      "car": 3,
+      "frame": 26,
+      "rom_offset": "0xdff00",
+      "bytes": 1152,
+      "file": "coche_03\\vista_26.png"
+    },
+    {
+      "car": 3,
+      "frame": 27,
+      "rom_offset": "0xe0380",
+      "bytes": 1152,
+      "file": "coche_03\\vista_27.png"
+    },
+    {
+      "car": 3,
+      "frame": 28,
+      "rom_offset": "0xe0800",
+      "bytes": 1152,
+      "file": "coche_03\\vista_28.png"
+    },
+    {
+      "car": 3,
+      "frame": 29,
+      "rom_offset": "0xe0c80",
+      "bytes": 1152,
+      "file": "coche_03\\vista_29.png"
+    },
+    {
+      "car": 3,
+      "frame": 30,
+      "rom_offset": "0xe1100",
+      "bytes": 1152,
+      "file": "coche_03\\vista_30.png"
+    },
+    {
+      "car": 3,
+      "frame": 31,
+      "rom_offset": "0xe1580",
+      "bytes": 1152,
+      "file": "coche_03\\vista_31.png"
+    },
+    {
+      "car": 3,
+      "frame": 32,
+      "rom_offset": "0xe1a00",
+      "bytes": 1152,
+      "file": "coche_03\\vista_32.png"
+    },
+    {
+      "car": 3,
+      "frame": 33,
+      "rom_offset": "0xe1e80",
+      "bytes": 1152,
+      "file": "coche_03\\vista_33.png"
+    },
+    {
+      "car": 3,
+      "frame": 34,
+      "rom_offset": "0xe2300",
+      "bytes": 1152,
+      "file": "coche_03\\vista_34.png"
+    },
+    {
+      "car": 3,
+      "frame": 35,
+      "rom_offset": "0xe2780",
+      "bytes": 1152,
+      "file": "coche_03\\vista_35.png"
+    },
+    {
+      "car": 3,
+      "frame": 36,
+      "rom_offset": "0xe2c00",
+      "bytes": 1152,
+      "file": "coche_03\\vista_36.png"
+    },
+    {
+      "car": 3,
+      "frame": 37,
+      "rom_offset": "0xe3080",
+      "bytes": 1152,
+      "file": "coche_03\\vista_37.png"
+    },
+    {
+      "car": 3,
+      "frame": 38,
+      "rom_offset": "0xe3500",
+      "bytes": 1152,
+      "file": "coche_03\\vista_38.png"
+    },
+    {
+      "car": 3,
+      "frame": 39,
+      "rom_offset": "0xe3980",
+      "bytes": 1152,
+      "file": "coche_03\\vista_39.png"
+    },
+    {
+      "car": 3,
+      "frame": 40,
+      "rom_offset": "0xe3e00",
+      "bytes": 1152,
+      "file": "coche_03\\vista_40.png"
+    },
+    {
+      "car": 3,
+      "frame": 41,
+      "rom_offset": "0xe4280",
+      "bytes": 1152,
+      "file": "coche_03\\vista_41.png"
+    },
+    {
+      "car": 3,
+      "frame": 42,
+      "rom_offset": "0xe4700",
+      "bytes": 1152,
+      "file": "coche_03\\vista_42.png"
+    },
+    {
+      "car": 3,
+      "frame": 43,
+      "rom_offset": "0xe4b80",
+      "bytes": 1152,
+      "file": "coche_03\\vista_43.png"
+    },
+    {
+      "car": 3,
+      "frame": 44,
+      "rom_offset": "0xe5000",
+      "bytes": 1152,
+      "file": "coche_03\\vista_44.png"
+    },
+    {
+      "car": 4,
+      "frame": 0,
+      "rom_offset": "0xe5480",
+      "bytes": 1152,
+      "file": "coche_04\\vista_00.png"
+    },
+    {
+      "car": 4,
+      "frame": 1,
+      "rom_offset": "0xe5900",
+      "bytes": 1152,
+      "file": "coche_04\\vista_01.png"
+    },
+    {
+      "car": 4,
+      "frame": 2,
+      "rom_offset": "0xe5d80",
+      "bytes": 1152,
+      "file": "coche_04\\vista_02.png"
+    },
+    {
+      "car": 4,
+      "frame": 3,
+      "rom_offset": "0xe6200",
+      "bytes": 1152,
+      "file": "coche_04\\vista_03.png"
+    },
+    {
+      "car": 4,
+      "frame": 4,
+      "rom_offset": "0xe6680",
+      "bytes": 1152,
+      "file": "coche_04\\vista_04.png"
+    },
+    {
+      "car": 4,
+      "frame": 5,
+      "rom_offset": "0xe6b00",
+      "bytes": 1152,
+      "file": "coche_04\\vista_05.png"
+    },
+    {
+      "car": 4,
+      "frame": 6,
+      "rom_offset": "0xe6f80",
+      "bytes": 1152,
+      "file": "coche_04\\vista_06.png"
+    },
+    {
+      "car": 4,
+      "frame": 7,
+      "rom_offset": "0xe7400",
+      "bytes": 1152,
+      "file": "coche_04\\vista_07.png"
+    },
+    {
+      "car": 4,
+      "frame": 8,
+      "rom_offset": "0xe7880",
+      "bytes": 1152,
+      "file": "coche_04\\vista_08.png"
+    },
+    {
+      "car": 4,
+      "frame": 9,
+      "rom_offset": "0xe7d00",
+      "bytes": 1152,
+      "file": "coche_04\\vista_09.png"
+    },
+    {
+      "car": 4,
+      "frame": 10,
+      "rom_offset": "0xe8180",
+      "bytes": 1152,
+      "file": "coche_04\\vista_10.png"
+    },
+    {
+      "car": 4,
+      "frame": 11,
+      "rom_offset": "0xe8600",
+      "bytes": 1152,
+      "file": "coche_04\\vista_11.png"
+    },
+    {
+      "car": 4,
+      "frame": 12,
+      "rom_offset": "0xe8a80",
+      "bytes": 1152,
+      "file": "coche_04\\vista_12.png"
+    },
+    {
+      "car": 4,
+      "frame": 13,
+      "rom_offset": "0xe8f00",
+      "bytes": 1152,
+      "file": "coche_04\\vista_13.png"
+    },
+    {
+      "car": 4,
+      "frame": 14,
+      "rom_offset": "0xe9380",
+      "bytes": 1152,
+      "file": "coche_04\\vista_14.png"
+    },
+    {
+      "car": 4,
+      "frame": 15,
+      "rom_offset": "0xe9800",
+      "bytes": 1152,
+      "file": "coche_04\\vista_15.png"
+    },
+    {
+      "car": 4,
+      "frame": 16,
+      "rom_offset": "0xe9c80",
+      "bytes": 1152,
+      "file": "coche_04\\vista_16.png"
+    },
+    {
+      "car": 4,
+      "frame": 17,
+      "rom_offset": "0xea100",
+      "bytes": 1152,
+      "file": "coche_04\\vista_17.png"
+    },
+    {
+      "car": 4,
+      "frame": 18,
+      "rom_offset": "0xea580",
+      "bytes": 1152,
+      "file": "coche_04\\vista_18.png"
+    },
+    {
+      "car": 4,
+      "frame": 19,
+      "rom_offset": "0xeaa00",
+      "bytes": 1152,
+      "file": "coche_04\\vista_19.png"
+    },
+    {
+      "car": 4,
+      "frame": 20,
+      "rom_offset": "0xeae80",
+      "bytes": 1152,
+      "file": "coche_04\\vista_20.png"
+    },
+    {
+      "car": 4,
+      "frame": 21,
+      "rom_offset": "0xeb300",
+      "bytes": 1152,
+      "file": "coche_04\\vista_21.png"
+    },
+    {
+      "car": 4,
+      "frame": 22,
+      "rom_offset": "0xeb780",
+      "bytes": 1152,
+      "file": "coche_04\\vista_22.png"
+    },
+    {
+      "car": 4,
+      "frame": 23,
+      "rom_offset": "0xebc00",
+      "bytes": 1152,
+      "file": "coche_04\\vista_23.png"
+    },
+    {
+      "car": 4,
+      "frame": 24,
+      "rom_offset": "0xec080",
+      "bytes": 1152,
+      "file": "coche_04\\vista_24.png"
+    },
+    {
+      "car": 4,
+      "frame": 25,
+      "rom_offset": "0xec500",
+      "bytes": 1152,
+      "file": "coche_04\\vista_25.png"
+    },
+    {
+      "car": 4,
+      "frame": 26,
+      "rom_offset": "0xec980",
+      "bytes": 1152,
+      "file": "coche_04\\vista_26.png"
+    },
+    {
+      "car": 4,
+      "frame": 27,
+      "rom_offset": "0xece00",
+      "bytes": 1152,
+      "file": "coche_04\\vista_27.png"
+    },
+    {
+      "car": 4,
+      "frame": 28,
+      "rom_offset": "0xed280",
+      "bytes": 1152,
+      "file": "coche_04\\vista_28.png"
+    },
+    {
+      "car": 4,
+      "frame": 29,
+      "rom_offset": "0xed700",
+      "bytes": 1152,
+      "file": "coche_04\\vista_29.png"
+    },
+    {
+      "car": 4,
+      "frame": 30,
+      "rom_offset": "0xedb80",
+      "bytes": 1152,
+      "file": "coche_04\\vista_30.png"
+    },
+    {
+      "car": 4,
+      "frame": 31,
+      "rom_offset": "0xee000",
+      "bytes": 1152,
+      "file": "coche_04\\vista_31.png"
+    },
+    {
+      "car": 4,
+      "frame": 32,
+      "rom_offset": "0xee480",
+      "bytes": 1152,
+      "file": "coche_04\\vista_32.png"
+    },
+    {
+      "car": 4,
+      "frame": 33,
+      "rom_offset": "0xee900",
+      "bytes": 1152,
+      "file": "coche_04\\vista_33.png"
+    },
+    {
+      "car": 4,
+      "frame": 34,
+      "rom_offset": "0xeed80",
+      "bytes": 1152,
+      "file": "coche_04\\vista_34.png"
+    },
+    {
+      "car": 4,
+      "frame": 35,
+      "rom_offset": "0xef200",
+      "bytes": 1152,
+      "file": "coche_04\\vista_35.png"
+    },
+    {
+      "car": 4,
+      "frame": 36,
+      "rom_offset": "0xef680",
+      "bytes": 1152,
+      "file": "coche_04\\vista_36.png"
+    },
+    {
+      "car": 4,
+      "frame": 37,
+      "rom_offset": "0xefb00",
+      "bytes": 1152,
+      "file": "coche_04\\vista_37.png"
+    },
+    {
+      "car": 4,
+      "frame": 38,
+      "rom_offset": "0xeff80",
+      "bytes": 1152,
+      "file": "coche_04\\vista_38.png"
+    },
+    {
+      "car": 4,
+      "frame": 39,
+      "rom_offset": "0xf0400",
+      "bytes": 1152,
+      "file": "coche_04\\vista_39.png"
+    },
+    {
+      "car": 4,
+      "frame": 40,
+      "rom_offset": "0xf0880",
+      "bytes": 1152,
+      "file": "coche_04\\vista_40.png"
+    },
+    {
+      "car": 4,
+      "frame": 41,
+      "rom_offset": "0xf0d00",
+      "bytes": 1152,
+      "file": "coche_04\\vista_41.png"
+    },
+    {
+      "car": 4,
+      "frame": 42,
+      "rom_offset": "0xf1180",
+      "bytes": 1152,
+      "file": "coche_04\\vista_42.png"
+    },
+    {
+      "car": 4,
+      "frame": 43,
+      "rom_offset": "0xf1600",
+      "bytes": 1152,
+      "file": "coche_04\\vista_43.png"
+    },
+    {
+      "car": 4,
+      "frame": 44,
+      "rom_offset": "0xf1a80",
+      "bytes": 1152,
+      "file": "coche_04\\vista_44.png"
+    },
+    {
+      "car": 5,
+      "frame": 0,
+      "rom_offset": "0xf1f00",
+      "bytes": 1152,
+      "file": "coche_05\\vista_00.png"
+    },
+    {
+      "car": 5,
+      "frame": 1,
+      "rom_offset": "0xf2380",
+      "bytes": 1152,
+      "file": "coche_05\\vista_01.png"
+    },
+    {
+      "car": 5,
+      "frame": 2,
+      "rom_offset": "0xf2800",
+      "bytes": 1152,
+      "file": "coche_05\\vista_02.png"
+    },
+    {
+      "car": 5,
+      "frame": 3,
+      "rom_offset": "0xf2c80",
+      "bytes": 1152,
+      "file": "coche_05\\vista_03.png"
+    },
+    {
+      "car": 5,
+      "frame": 4,
+      "rom_offset": "0xf3100",
+      "bytes": 1152,
+      "file": "coche_05\\vista_04.png"
+    },
+    {
+      "car": 5,
+      "frame": 5,
+      "rom_offset": "0xf3580",
+      "bytes": 1152,
+      "file": "coche_05\\vista_05.png"
+    },
+    {
+      "car": 5,
+      "frame": 6,
+      "rom_offset": "0xf3a00",
+      "bytes": 1152,
+      "file": "coche_05\\vista_06.png"
+    },
+    {
+      "car": 5,
+      "frame": 7,
+      "rom_offset": "0xf3e80",
+      "bytes": 1152,
+      "file": "coche_05\\vista_07.png"
+    },
+    {
+      "car": 5,
+      "frame": 8,
+      "rom_offset": "0xf4300",
+      "bytes": 1152,
+      "file": "coche_05\\vista_08.png"
+    },
+    {
+      "car": 5,
+      "frame": 9,
+      "rom_offset": "0xf4780",
+      "bytes": 1152,
+      "file": "coche_05\\vista_09.png"
+    },
+    {
+      "car": 5,
+      "frame": 10,
+      "rom_offset": "0xf4c00",
+      "bytes": 1152,
+      "file": "coche_05\\vista_10.png"
+    },
+    {
+      "car": 5,
+      "frame": 11,
+      "rom_offset": "0xf5080",
+      "bytes": 1152,
+      "file": "coche_05\\vista_11.png"
+    },
+    {
+      "car": 5,
+      "frame": 12,
+      "rom_offset": "0xf5500",
+      "bytes": 1152,
+      "file": "coche_05\\vista_12.png"
+    },
+    {
+      "car": 5,
+      "frame": 13,
+      "rom_offset": "0xf5980",
+      "bytes": 1152,
+      "file": "coche_05\\vista_13.png"
+    },
+    {
+      "car": 5,
+      "frame": 14,
+      "rom_offset": "0xf5e00",
+      "bytes": 1152,
+      "file": "coche_05\\vista_14.png"
+    },
+    {
+      "car": 5,
+      "frame": 15,
+      "rom_offset": "0xf6280",
+      "bytes": 1152,
+      "file": "coche_05\\vista_15.png"
+    },
+    {
+      "car": 5,
+      "frame": 16,
+      "rom_offset": "0xf6700",
+      "bytes": 1152,
+      "file": "coche_05\\vista_16.png"
+    },
+    {
+      "car": 5,
+      "frame": 17,
+      "rom_offset": "0xf6b80",
+      "bytes": 1152,
+      "file": "coche_05\\vista_17.png"
+    },
+    {
+      "car": 5,
+      "frame": 18,
+      "rom_offset": "0xf7000",
+      "bytes": 1152,
+      "file": "coche_05\\vista_18.png"
+    },
+    {
+      "car": 5,
+      "frame": 19,
+      "rom_offset": "0xf7480",
+      "bytes": 1152,
+      "file": "coche_05\\vista_19.png"
+    },
+    {
+      "car": 5,
+      "frame": 20,
+      "rom_offset": "0xf7900",
+      "bytes": 1152,
+      "file": "coche_05\\vista_20.png"
+    },
+    {
+      "car": 5,
+      "frame": 21,
+      "rom_offset": "0xf7d80",
+      "bytes": 1152,
+      "file": "coche_05\\vista_21.png"
+    },
+    {
+      "car": 5,
+      "frame": 22,
+      "rom_offset": "0xf8200",
+      "bytes": 1152,
+      "file": "coche_05\\vista_22.png"
+    },
+    {
+      "car": 5,
+      "frame": 23,
+      "rom_offset": "0xf8680",
+      "bytes": 1152,
+      "file": "coche_05\\vista_23.png"
+    },
+    {
+      "car": 5,
+      "frame": 24,
+      "rom_offset": "0xf8b00",
+      "bytes": 1152,
+      "file": "coche_05\\vista_24.png"
+    },
+    {
+      "car": 5,
+      "frame": 25,
+      "rom_offset": "0xf8f80",
+      "bytes": 1152,
+      "file": "coche_05\\vista_25.png"
+    },
+    {
+      "car": 5,
+      "frame": 26,
+      "rom_offset": "0xf9400",
+      "bytes": 1152,
+      "file": "coche_05\\vista_26.png"
+    },
+    {
+      "car": 5,
+      "frame": 27,
+      "rom_offset": "0xf9880",
+      "bytes": 1152,
+      "file": "coche_05\\vista_27.png"
+    },
+    {
+      "car": 5,
+      "frame": 28,
+      "rom_offset": "0xf9d00",
+      "bytes": 1152,
+      "file": "coche_05\\vista_28.png"
+    },
+    {
+      "car": 5,
+      "frame": 29,
+      "rom_offset": "0xfa180",
+      "bytes": 1152,
+      "file": "coche_05\\vista_29.png"
+    },
+    {
+      "car": 5,
+      "frame": 30,
+      "rom_offset": "0xfa600",
+      "bytes": 1152,
+      "file": "coche_05\\vista_30.png"
+    },
+    {
+      "car": 5,
+      "frame": 31,
+      "rom_offset": "0xfaa80",
+      "bytes": 1152,
+      "file": "coche_05\\vista_31.png"
+    },
+    {
+      "car": 5,
+      "frame": 32,
+      "rom_offset": "0xfaf00",
+      "bytes": 1152,
+      "file": "coche_05\\vista_32.png"
+    },
+    {
+      "car": 5,
+      "frame": 33,
+      "rom_offset": "0xfb380",
+      "bytes": 1152,
+      "file": "coche_05\\vista_33.png"
+    },
+    {
+      "car": 5,
+      "frame": 34,
+      "rom_offset": "0xfb800",
+      "bytes": 1152,
+      "file": "coche_05\\vista_34.png"
+    },
+    {
+      "car": 5,
+      "frame": 35,
+      "rom_offset": "0xfbc80",
+      "bytes": 1152,
+      "file": "coche_05\\vista_35.png"
+    },
+    {
+      "car": 5,
+      "frame": 36,
+      "rom_offset": "0xfc100",
+      "bytes": 1152,
+      "file": "coche_05\\vista_36.png"
+    },
+    {
+      "car": 5,
+      "frame": 37,
+      "rom_offset": "0xfc580",
+      "bytes": 1152,
+      "file": "coche_05\\vista_37.png"
+    },
+    {
+      "car": 5,
+      "frame": 38,
+      "rom_offset": "0xfca00",
+      "bytes": 1152,
+      "file": "coche_05\\vista_38.png"
+    },
+    {
+      "car": 5,
+      "frame": 39,
+      "rom_offset": "0xfce80",
+      "bytes": 1152,
+      "file": "coche_05\\vista_39.png"
+    },
+    {
+      "car": 5,
+      "frame": 40,
+      "rom_offset": "0xfd300",
+      "bytes": 1152,
+      "file": "coche_05\\vista_40.png"
+    },
+    {
+      "car": 5,
+      "frame": 41,
+      "rom_offset": "0xfd780",
+      "bytes": 1152,
+      "file": "coche_05\\vista_41.png"
+    },
+    {
+      "car": 5,
+      "frame": 42,
+      "rom_offset": "0xfdc00",
+      "bytes": 1152,
+      "file": "coche_05\\vista_42.png"
+    },
+    {
+      "car": 5,
+      "frame": 43,
+      "rom_offset": "0xfe080",
+      "bytes": 1152,
+      "file": "coche_05\\vista_43.png"
+    },
+    {
+      "car": 5,
+      "frame": 44,
+      "rom_offset": "0xfe500",
+      "bytes": 1152,
+      "file": "coche_05\\vista_44.png"
+    }
+  ]
+}

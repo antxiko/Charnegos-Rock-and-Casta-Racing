@@ -1,0 +1,20 @@
+GIMP Palette
+Name: Rip
+Columns: 16
+#
+0 0 0 indice_00
+255 255 255 indice_01
+182 182 218 indice_02
+145 145 182 indice_03
+72 72 109 indice_04
+36 36 72 indice_05
+0 0 36 indice_06
+255 218 109 indice_07
+218 145 36 indice_08
+145 109 0 indice_09
+109 36 0 indice_10
+72 0 36 indice_11
+0 255 0 indice_12
+0 182 0 indice_13
+0 109 0 indice_14
+0 72 0 indice_15

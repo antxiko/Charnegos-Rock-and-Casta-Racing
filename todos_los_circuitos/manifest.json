@@ -1,0 +1,634 @@
+{
+  "tracks": [
+    {
+      "id": 1,
+      "world": 0,
+      "world_name": "CHEM VI",
+      "resource_id": 107,
+      "path": "mapas/01",
+      "tmx_roundtrip": true
+    },
+    {
+      "id": 2,
+      "world": 0,
+      "world_name": "CHEM VI",
+      "resource_id": 108,
+      "path": "mapas/02",
+      "tmx_roundtrip": true
+    },
+    {
+      "id": 3,
+      "world": 0,
+      "world_name": "CHEM VI",
+      "resource_id": 109,
+      "path": "mapas/03",
+      "tmx_roundtrip": true
+    },
+    {
+      "id": 4,
+      "world": 0,
+      "world_name": "CHEM VI",
+      "resource_id": 110,
+      "path": "mapas/04",
+      "tmx_roundtrip": true
+    },
+    {
+      "id": 5,
+      "world": 1,
+      "world_name": "DRAKONIS",
+      "resource_id": 111,
+      "path": "mapas/05",
+      "tmx_roundtrip": true
+    },
+    {
+      "id": 6,
+      "world": 1,
+      "world_name": "DRAKONIS",
+      "resource_id": 112,
+      "path": "mapas/06",
+      "tmx_roundtrip": true
+    },
+    {
+      "id": 7,
+      "world": 1,
+      "world_name": "DRAKONIS",
+      "resource_id": 113,
+      "path": "mapas/07",
+      "tmx_roundtrip": true
+    },
+    {
+      "id": 8,
+      "world": 1,
+      "world_name": "DRAKONIS",
+      "resource_id": 114,
+      "path": "mapas/08",
+      "tmx_roundtrip": true
+    },
+    {
+      "id": 9,
+      "world": 1,
+      "world_name": "DRAKONIS",
+      "resource_id": 115,
+      "path": "mapas/09",
+      "tmx_roundtrip": true
+    },
+    {
+      "id": 10,
+      "world": 2,
+      "world_name": "BOGMIRE",
+      "resource_id": 116,
+      "path": "mapas/10",
+      "tmx_roundtrip": true
+    },
+    {
+      "id": 11,
+      "world": 2,
+      "world_name": "BOGMIRE",
+      "resource_id": 117,
+      "path": "mapas/11",
+      "tmx_roundtrip": true
+    },
+    {
+      "id": 12,
+      "world": 2,
+      "world_name": "BOGMIRE",
+      "resource_id": 118,
+      "path": "mapas/12",
+      "tmx_roundtrip": true
+    },
+    {
+      "id": 13,
+      "world": 2,
+      "world_name": "BOGMIRE",
+      "resource_id": 119,
+      "path": "mapas/13",
+      "tmx_roundtrip": true
+    },
+    {
+      "id": 14,
+      "world": 2,
+      "world_name": "BOGMIRE",
+      "resource_id": 120,
+      "path": "mapas/14",
+      "tmx_roundtrip": true
+    },
+    {
+      "id": 15,
+      "world": 2,
+      "world_name": "BOGMIRE",
+      "resource_id": 121,
+      "path": "mapas/15",
+      "tmx_roundtrip": true
+    },
+    {
+      "id": 16,
+      "world": 3,
+      "world_name": "NEW MOJAVE",
+      "resource_id": 122,
+      "path": "mapas/16",
+      "tmx_roundtrip": true
+    },
+    {
+      "id": 17,
+      "world": 3,
+      "world_name": "NEW MOJAVE",
+      "resource_id": 123,
+      "path": "mapas/17",
+      "tmx_roundtrip": true
+    },
+    {
+      "id": 18,
+      "world": 3,
+      "world_name": "NEW MOJAVE",
+      "resource_id": 124,
+      "path": "mapas/18",
+      "tmx_roundtrip": true
+    },
+    {
+      "id": 19,
+      "world": 3,
+      "world_name": "NEW MOJAVE",
+      "resource_id": 125,
+      "path": "mapas/19",
+      "tmx_roundtrip": true
+    },
+    {
+      "id": 20,
+      "world": 3,
+      "world_name": "NEW MOJAVE",
+      "resource_id": 126,
+      "path": "mapas/20",
+      "tmx_roundtrip": true
+    },
+    {
+      "id": 21,
+      "world": 3,
+      "world_name": "NEW MOJAVE",
+      "resource_id": 127,
+      "path": "mapas/21",
+      "tmx_roundtrip": true
+    },
+    {
+      "id": 22,
+      "world": 3,
+      "world_name": "NEW MOJAVE",
+      "resource_id": 128,
+      "path": "mapas/22",
+      "tmx_roundtrip": true
+    },
+    {
+      "id": 23,
+      "world": 4,
+      "world_name": "NHO",
+      "resource_id": 129,
+      "path": "mapas/23",
+      "tmx_roundtrip": true
+    },
+    {
+      "id": 24,
+      "world": 4,
+      "world_name": "NHO",
+      "resource_id": 130,
+      "path": "mapas/24",
+      "tmx_roundtrip": true
+    },
+    {
+      "id": 25,
+      "world": 4,
+      "world_name": "NHO",
+      "resource_id": 131,
+      "path": "mapas/25",
+      "tmx_roundtrip": true
+    },
+    {
+      "id": 26,
+      "world": 4,
+      "world_name": "NHO",
+      "resource_id": 132,
+      "path": "mapas/26",
+      "tmx_roundtrip": true
+    },
+    {
+      "id": 27,
+      "world": 4,
+      "world_name": "NHO",
+      "resource_id": 133,
+      "path": "mapas/27",
+      "tmx_roundtrip": true
+    },
+    {
+      "id": 28,
+      "world": 4,
+      "world_name": "NHO",
+      "resource_id": 134,
+      "path": "mapas/28",
+      "tmx_roundtrip": true
+    },
+    {
+      "id": 29,
+      "world": 4,
+      "world_name": "NHO",
+      "resource_id": 135,
+      "path": "mapas/29",
+      "tmx_roundtrip": true
+    },
+    {
+      "id": 30,
+      "world": 5,
+      "world_name": "INFERNO",
+      "resource_id": 136,
+      "path": "mapas/30",
+      "tmx_roundtrip": true
+    },
+    {
+      "id": 31,
+      "world": 5,
+      "world_name": "INFERNO",
+      "resource_id": 137,
+      "path": "mapas/31",
+      "tmx_roundtrip": true
+    },
+    {
+      "id": 32,
+      "world": 5,
+      "world_name": "INFERNO",
+      "resource_id": 138,
+      "path": "mapas/32",
+      "tmx_roundtrip": true
+    },
+    {
+      "id": 33,
+      "world": 5,
+      "world_name": "INFERNO",
+      "resource_id": 139,
+      "path": "mapas/33",
+      "tmx_roundtrip": true
+    },
+    {
+      "id": 34,
+      "world": 5,
+      "world_name": "INFERNO",
+      "resource_id": 140,
+      "path": "mapas/34",
+      "tmx_roundtrip": true
+    },
+    {
+      "id": 35,
+      "world": 5,
+      "world_name": "INFERNO",
+      "resource_id": 141,
+      "path": "mapas/35",
+      "tmx_roundtrip": true
+    },
+    {
+      "id": 36,
+      "world": 5,
+      "world_name": "INFERNO",
+      "resource_id": 142,
+      "path": "mapas/36",
+      "tmx_roundtrip": true
+    },
+    {
+      "id": 37,
+      "world": 0,
+      "world_name": "CHEM VI",
+      "resource_id": 143,
+      "path": "mapas/37",
+      "tmx_roundtrip": true
+    },
+    {
+      "id": 38,
+      "world": 0,
+      "world_name": "CHEM VI",
+      "resource_id": 144,
+      "path": "mapas/38",
+      "tmx_roundtrip": true
+    },
+    {
+      "id": 39,
+      "world": 0,
+      "world_name": "CHEM VI",
+      "resource_id": 145,
+      "path": "mapas/39",
+      "tmx_roundtrip": true
+    },
+    {
+      "id": 40,
+      "world": 0,
+      "world_name": "CHEM VI",
+      "resource_id": 146,
+      "path": "mapas/40",
+      "tmx_roundtrip": true
+    },
+    {
+      "id": 41,
+      "world": 1,
+      "world_name": "DRAKONIS",
+      "resource_id": 147,
+      "path": "mapas/41",
+      "tmx_roundtrip": true
+    },
+    {
+      "id": 42,
+      "world": 1,
+      "world_name": "DRAKONIS",
+      "resource_id": 148,
+      "path": "mapas/42",
+      "tmx_roundtrip": true
+    },
+    {
+      "id": 43,
+      "world": 1,
+      "world_name": "DRAKONIS",
+      "resource_id": 149,
+      "path": "mapas/43",
+      "tmx_roundtrip": true
+    },
+    {
+      "id": 44,
+      "world": 1,
+      "world_name": "DRAKONIS",
+      "resource_id": 150,
+      "path": "mapas/44",
+      "tmx_roundtrip": true
+    },
+    {
+      "id": 45,
+      "world": 1,
+      "world_name": "DRAKONIS",
+      "resource_id": 151,
+      "path": "mapas/45",
+      "tmx_roundtrip": true
+    },
+    {
+      "id": 46,
+      "world": 2,
+      "world_name": "BOGMIRE",
+      "resource_id": 152,
+      "path": "mapas/46",
+      "tmx_roundtrip": true
+    },
+    {
+      "id": 47,
+      "world": 2,
+      "world_name": "BOGMIRE",
+      "resource_id": 153,
+      "path": "mapas/47",
+      "tmx_roundtrip": true
+    },
+    {
+      "id": 48,
+      "world": 2,
+      "world_name": "BOGMIRE",
+      "resource_id": 154,
+      "path": "mapas/48",
+      "tmx_roundtrip": true
+    },
+    {
+      "id": 49,
+      "world": 2,
+      "world_name": "BOGMIRE",
+      "resource_id": 155,
+      "path": "mapas/49",
+      "tmx_roundtrip": true
+    },
+    {
+      "id": 50,
+      "world": 2,
+      "world_name": "BOGMIRE",
+      "resource_id": 156,
+      "path": "mapas/50",
+      "tmx_roundtrip": true
+    },
+    {
+      "id": 51,
+      "world": 2,
+      "world_name": "BOGMIRE",
+      "resource_id": 157,
+      "path": "mapas/51",
+      "tmx_roundtrip": true
+    },
+    {
+      "id": 52,
+      "world": 3,
+      "world_name": "NEW MOJAVE",
+      "resource_id": 158,
+      "path": "mapas/52",
+      "tmx_roundtrip": true
+    },
+    {
+      "id": 53,
+      "world": 3,
+      "world_name": "NEW MOJAVE",
+      "resource_id": 159,
+      "path": "mapas/53",
+      "tmx_roundtrip": true
+    },
+    {
+      "id": 54,
+      "world": 3,
+      "world_name": "NEW MOJAVE",
+      "resource_id": 160,
+      "path": "mapas/54",
+      "tmx_roundtrip": true
+    },
+    {
+      "id": 55,
+      "world": 3,
+      "world_name": "NEW MOJAVE",
+      "resource_id": 161,
+      "path": "mapas/55",
+      "tmx_roundtrip": true
+    },
+    {
+      "id": 56,
+      "world": 3,
+      "world_name": "NEW MOJAVE",
+      "resource_id": 162,
+      "path": "mapas/56",
+      "tmx_roundtrip": true
+    },
+    {
+      "id": 57,
+      "world": 3,
+      "world_name": "NEW MOJAVE",
+      "resource_id": 163,
+      "path": "mapas/57",
+      "tmx_roundtrip": true
+    },
+    {
+      "id": 58,
+      "world": 3,
+      "world_name": "NEW MOJAVE",
+      "resource_id": 164,
+      "path": "mapas/58",
+      "tmx_roundtrip": true
+    },
+    {
+      "id": 59,
+      "world": 4,
+      "world_name": "NHO",
+      "resource_id": 165,
+      "path": "mapas/59",
+      "tmx_roundtrip": true
+    },
+    {
+      "id": 60,
+      "world": 4,
+      "world_name": "NHO",
+      "resource_id": 166,
+      "path": "mapas/60",
+      "tmx_roundtrip": true
+    },
+    {
+      "id": 61,
+      "world": 4,
+      "world_name": "NHO",
+      "resource_id": 167,
+      "path": "mapas/61",
+      "tmx_roundtrip": true
+    },
+    {
+      "id": 62,
+      "world": 4,
+      "world_name": "NHO",
+      "resource_id": 168,
+      "path": "mapas/62",
+      "tmx_roundtrip": true
+    },
+    {
+      "id": 63,
+      "world": 4,
+      "world_name": "NHO",
+      "resource_id": 169,
+      "path": "mapas/63",
+      "tmx_roundtrip": true
+    },
+    {
+      "id": 64,
+      "world": 4,
+      "world_name": "NHO",
+      "resource_id": 170,
+      "path": "mapas/64",
+      "tmx_roundtrip": true
+    },
+    {
+      "id": 65,
+      "world": 4,
+      "world_name": "NHO",
+      "resource_id": 171,
+      "path": "mapas/65",
+      "tmx_roundtrip": true
+    },
+    {
+      "id": 66,
+      "world": 5,
+      "world_name": "INFERNO",
+      "resource_id": 172,
+      "path": "mapas/66",
+      "tmx_roundtrip": true
+    },
+    {
+      "id": 67,
+      "world": 5,
+      "world_name": "INFERNO",
+      "resource_id": 173,
+      "path": "mapas/67",
+      "tmx_roundtrip": true
+    },
+    {
+      "id": 68,
+      "world": 5,
+      "world_name": "INFERNO",
+      "resource_id": 174,
+      "path": "mapas/68",
+      "tmx_roundtrip": true
+    },
+    {
+      "id": 69,
+      "world": 5,
+      "world_name": "INFERNO",
+      "resource_id": 175,
+      "path": "mapas/69",
+      "tmx_roundtrip": true
+    },
+    {
+      "id": 70,
+      "world": 5,
+      "world_name": "INFERNO",
+      "resource_id": 176,
+      "path": "mapas/70",
+      "tmx_roundtrip": true
+    },
+    {
+      "id": 71,
+      "world": 5,
+      "world_name": "INFERNO",
+      "resource_id": 177,
+      "path": "mapas/71",
+      "tmx_roundtrip": true
+    },
+    {
+      "id": 72,
+      "world": 5,
+      "world_name": "INFERNO",
+      "resource_id": 178,
+      "path": "mapas/72",
+      "tmx_roundtrip": true
+    }
+  ],
+  "banks": [
+    {
+      "name": "CHEM VI",
+      "id": 0,
+      "resource_id": 60,
+      "rom_offset": "0x898c8",
+      "rom_end": "0x8c4f5",
+      "tiles": 830
+    },
+    {
+      "name": "DRAKONIS",
+      "id": 1,
+      "resource_id": 68,
+      "rom_offset": "0x95292",
+      "rom_end": "0x985e2",
+      "tiles": 823
+    },
+    {
+      "name": "BOGMIRE",
+      "id": 2,
+      "resource_id": 56,
+      "rom_offset": "0x83d16",
+      "rom_end": "0x87492",
+      "tiles": 977
+    },
+    {
+      "name": "NEW MOJAVE",
+      "id": 3,
+      "resource_id": 76,
+      "rom_offset": "0xa1094",
+      "rom_end": "0xa4526",
+      "tiles": 966
+    },
+    {
+      "name": "NHO",
+      "id": 4,
+      "resource_id": 64,
+      "rom_offset": "0x8eab6",
+      "rom_end": "0x92cde",
+      "tiles": 917
+    },
+    {
+      "name": "INFERNO",
+      "id": 5,
+      "resource_id": 72,
+      "rom_offset": "0x9ad08",
+      "rom_end": "0x9e817",
+      "tiles": 906
+    }
+  ],
+  "track_count": 72,
+  "tile_pngs": 8302,
+  "seed_source": "circuitos_png/captura/RAM.bin",
+  "all_tmx_roundtrips": true
+}

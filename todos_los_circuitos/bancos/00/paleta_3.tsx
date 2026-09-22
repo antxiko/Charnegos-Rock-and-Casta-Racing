@@ -1,0 +1,1 @@
+<tileset version="1.10" name="CHEM VI paleta 3" tilewidth="8" tileheight="8" tilecount="2048" columns="32"><image source="paleta_3_tileset.png" width="256" height="512"/></tileset>

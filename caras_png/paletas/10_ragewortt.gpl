@@ -1,0 +1,20 @@
+GIMP Palette
+Name: Ragewortt
+Columns: 16
+#
+0 0 0 indice_00
+255 255 255 indice_01
+0 0 0 indice_02
+109 255 0 indice_03
+0 218 0 indice_04
+0 182 0 indice_05
+0 109 0 indice_06
+0 72 0 indice_07
+0 0 109 indice_08
+218 218 218 indice_09
+182 182 145 indice_10
+109 109 72 indice_11
+255 72 255 indice_12
+182 36 218 indice_13
+109 0 145 indice_14
+36 0 72 indice_15

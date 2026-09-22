@@ -1,0 +1,56 @@
+{
+  "rom_sha256": "b65b7de45420e7618fef1b9bef13076389fdf7e0da8dfec1de23f528dcd170cb",
+  "scenes": [
+    {
+      "scene": "01_hangar",
+      "graphics": 190,
+      "maps": [
+        191,
+        192
+      ],
+      "palette": 196,
+      "palette_updates": [],
+      "extras": [
+        193,
+        194,
+        197,
+        198,
+        199,
+        200
+      ]
+    },
+    {
+      "scene": "02_planeta",
+      "graphics": 201,
+      "maps": [
+        202
+      ],
+      "palette": 196,
+      "palette_updates": [
+        203
+      ],
+      "extras": []
+    },
+    {
+      "scene": "03_ciudad",
+      "graphics": 204,
+      "maps": [
+        205,
+        206
+      ],
+      "palette": 207,
+      "palette_updates": [],
+      "extras": []
+    },
+    {
+      "scene": "04_escenario",
+      "graphics": 208,
+      "maps": [
+        209
+      ],
+      "palette": 210,
+      "palette_updates": [],
+      "extras": []
+    }
+  ]
+}

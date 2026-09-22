@@ -25,23 +25,13 @@
 *.csv
 
 # Generated extraction trees
-caras_png/
-circuitos_png/
-coches_png/
 extracted/
 musicas/
 musicas_tracker/
 partidas/
 samples_wav/
-intro_png/*
-!intro_png/LEEME.md
-!intro_png/APLICAR_INTRO.cmd
-final_png/*
-!final_png/LEEME.md
-!final_png/APLICAR_FINAL.cmd
 final_png_investigacion/
 final_png_test_*/
-todos_los_circuitos/
 validation_bizhawk/
 textos/*
 !textos/EDITOR.html
@@ -49,6 +39,21 @@ textos/*
 !textos/LEEME.md
 !textos/MAPA_ROM.md
 roms_editadas/
+
+# Editable generated assets are published; runtime captures remain local.
+!caras_png/**
+caras_png/captura/
+!circuitos_png/**
+circuitos_png/captura/
+!coches_png/**
+!intro_png/**
+intro_png/arranque/
+intro_png/captura/
+intro_png/capture_*.lua
+intro_png/render_*.png
+!final_png/**
+!todos_los_circuitos/**
+todos_los_circuitos/verificacion/
 
 # Local third-party checkout and Python/browser caches
 tools/vgm2fur-src/

@@ -1,0 +1,20 @@
+GIMP Palette
+Name: Shred
+Columns: 16
+#
+0 0 0 indice_00
+255 182 0 indice_01
+218 109 0 indice_02
+182 72 0 indice_03
+145 36 0 indice_04
+109 0 0 indice_05
+0 0 36 indice_06
+255 218 109 indice_07
+218 145 36 indice_08
+145 109 0 indice_09
+109 36 0 indice_10
+0 72 0 indice_11
+255 0 0 indice_12
+182 0 0 indice_13
+145 0 0 indice_14
+72 0 0 indice_15

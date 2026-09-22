@@ -1,0 +1,20 @@
+GIMP Palette
+Name: NHO
+Columns: 16
+#
+0 0 0 indice_0
+255 255 255 indice_1
+182 218 255 indice_2
+145 182 255 indice_3
+72 109 255 indice_4
+36 72 255 indice_5
+0 36 218 indice_6
+0 218 36 indice_7
+0 145 0 indice_8
+0 109 0 indice_9
+0 36 0 indice_10
+0 0 0 indice_11
+36 36 36 indice_12
+72 72 72 indice_13
+109 109 145 indice_14
+182 182 182 indice_15

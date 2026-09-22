@@ -1,0 +1,1 @@
+<tileset version="1.10" name="BOGMIRE paleta 1" tilewidth="8" tileheight="8" tilecount="2048" columns="32"><image source="paleta_1_tileset.png" width="256" height="512"/></tileset>

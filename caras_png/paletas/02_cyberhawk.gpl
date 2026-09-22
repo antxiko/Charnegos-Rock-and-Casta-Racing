@@ -1,0 +1,20 @@
+GIMP Palette
+Name: Cyberhawk
+Columns: 16
+#
+0 0 0 indice_00
+109 255 255 indice_01
+72 218 255 indice_02
+0 182 218 indice_03
+0 145 218 indice_04
+0 72 182 indice_05
+0 36 182 indice_06
+0 0 109 indice_07
+0 0 72 indice_08
+0 0 36 indice_09
+0 0 0 indice_10
+72 0 0 indice_11
+255 182 109 indice_12
+218 109 36 indice_13
+145 72 0 indice_14
+255 0 0 indice_15

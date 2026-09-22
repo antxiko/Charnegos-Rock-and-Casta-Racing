@@ -1,0 +1,29 @@
+{
+  "rom_sha256": "b65b7de45420e7618fef1b9bef13076389fdf7e0da8dfec1de23f528dcd170cb",
+  "format": "Indexed PNG; four 16-color CRAM lines",
+  "screens": [
+    {
+      "name": "interplay",
+      "map_resource": 25,
+      "graphics_resource": 26,
+      "palette_resource": 27,
+      "png": "interplay_logo.png",
+      "native_roundtrip": true
+    },
+    {
+      "name": "blizzard",
+      "map_resource": 22,
+      "graphics_resource": 23,
+      "palette_resource": 24,
+      "png": "blizzard_logo.png",
+      "native_roundtrip": true
+    }
+  ],
+  "title": {
+    "back_map": 46,
+    "front_map": 221,
+    "graphics": 47,
+    "letters": 50,
+    "palette": 48
+  }
+}
