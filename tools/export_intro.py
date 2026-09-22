@@ -112,8 +112,8 @@ def encode_logo(im,gfx,base_tile):
     return bytes(out)
 
 def compress(data):
-    positions={};tokens=[];pos=0
-    while pos<len(data):
+    positions={};matches=[None]*len(data)
+    for pos in range(len(data)):
         best_len=0;best_q=0;key=data[pos:pos+3]
         if len(key)==3:
             for q in reversed(positions.get(key,())[-1024:]):
@@ -122,13 +122,29 @@ def compress(data):
                 while n<18 and pos+n<len(data) and data[q+n]==data[pos+n]:n+=1
                 if n>best_len:best_len,best_q=n,q
                 if n==18:break
-        take=best_len if best_len>=3 else 1
-        if take>=3:
-            off=best_q&4095;tokens.append((False,bytes((off&255,((take-3)<<4)|(off>>8)))))
-        else:tokens.append((True,bytes((data[pos],))))
-        for q in range(pos,pos+take):
-            if q+3<=len(data):positions.setdefault(data[q:q+3],[]).append(q)
-        pos+=take
+            if pos<4096 and data[pos]==0:
+                n=0
+                while n<18 and pos+n<len(data) and data[pos+n]==0:n+=1
+                if n>best_len:best_len,best_q=n,pos
+            positions.setdefault(key,[]).append(pos)
+        if best_len>=3:matches[pos]=(best_len,best_q&4095)
+    inf=10**9;n=len(data);dp=[[inf]*8 for _ in range(n+1)];choice=[[None]*8 for _ in range(n)]
+    for mod in range(8):dp[n][mod]=0
+    for pos in range(n-1,-1,-1):
+      for mod in range(8):
+        overhead=1 if mod==0 else 0;nm=(mod+1)&7
+        dp[pos][mod]=overhead+1+dp[pos+1][nm];choice[pos][mod]=(1,0)
+        if matches[pos]:
+          maximum,off=matches[pos]
+          for take in range(3,maximum+1):
+            cost=overhead+2+dp[pos+take][nm]
+            if cost<dp[pos][mod]:dp[pos][mod]=cost;choice[pos][mod]=(take,off)
+    tokens=[];pos=mod=0
+    while pos<n:
+        take,off=choice[pos][mod]
+        if take==1:tokens.append((True,bytes((data[pos],))))
+        else:tokens.append((False,bytes((off&255,((take-3)<<4)|(off>>8)))))
+        pos+=take;mod=(mod+1)&7
     out=bytearray()
     for p in range(0,len(tokens),8):
         group=tokens[p:p+8];flags=sum((1<<i) for i,t in enumerate(group) if t[0]);out.append(flags)

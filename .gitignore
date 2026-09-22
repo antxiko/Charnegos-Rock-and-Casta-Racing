@@ -36,6 +36,11 @@ samples_wav/
 intro_png/*
 !intro_png/LEEME.md
 !intro_png/APLICAR_INTRO.cmd
+final_png/*
+!final_png/LEEME.md
+!final_png/APLICAR_FINAL.cmd
+final_png_investigacion/
+final_png_test_*/
 todos_los_circuitos/
 validation_bizhawk/
 textos/*
