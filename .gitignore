@@ -1,0 +1,53 @@
+# Copyrighted game data and emulator state
+*.md
+!README.md
+!LICENSE.md
+*.bin
+*.gen
+*.smd
+*.state
+*.State
+*.sav
+*.ips
+*.bps
+*.xdelta
+*.vgm
+*.vgz
+*.fur
+*.wav
+*.mid
+*.png
+*.gif
+*.bmp
+*.gpl
+*.tmx
+*.tsx
+*.csv
+
+# Generated extraction trees
+caras_png/
+circuitos_png/
+coches_png/
+extracted/
+musicas/
+musicas_tracker/
+partidas/
+samples_wav/
+todos_los_circuitos/
+validation_bizhawk/
+roms_editadas/
+
+# Local third-party checkout and Python/browser caches
+tools/vgm2fur-src/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.playwright/
+.venv/
+venv/
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
