@@ -18,7 +18,7 @@ También puedes editar directamente `textos.json` con cualquier editor de texto.
 - Cada línea debe caber en el ancho indicado por `max_line_chars`. Ese límite pertenece a la pantalla, no al antiguo hueco de la cadena.
 - Se admiten `Ñ`, `ñ`, `Á`, `á`, `É`, `é`, `Í`, `í`, `Ó`, `ó`, `Ú` y `ú`. La fuente se amplía automáticamente al usarlos.
 - Los saltos de línea del JSON se convierten al byte `0x0D` usado por el juego.
-- Si todo cabe, la ROM conserva su tamaño y sus direcciones originales. Si una cadena crece, el banco completo se recoloca automáticamente y la ROM se amplía a 2 MiB.
+- Si todo cabe, la ROM conserva sus direcciones originales. Si una cadena crece, el banco completo se recoloca en un hueco interno de 24576 bytes. La ROM permanece siempre en 1 MiB.
 
 La distribución, los punteros y la zona ampliada están documentados en `MAPA_ROM.md`.
 

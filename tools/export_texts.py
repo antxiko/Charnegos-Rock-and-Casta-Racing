@@ -19,8 +19,8 @@ SECTIONS=((0x398c,'status'),(0x39f4,'pilots'),(0x3c01,'planets'),
           (0x4bc1,'system'))
 POINTER_TABLE=(0x37ce,0x398c)
 TEXT_BASE_PATCH=0x3664
-RELOCATED_BASE=0x100000
-ROM_EXPANDED_SIZE=0x200000
+RELOCATED_BASE=0x65000
+RELOCATED_END=0x6b000
 SPANISH={'Ñ':0x40,'ñ':0x40,'Á':0x5b,'á':0x5b,'É':0x5c,'é':0x5c,
          'Í':0x5d,'í':0x5d,'Ó':0x5e,'ó':0x5e,'Ú':0x5f,'ú':0x5f}
 
@@ -96,13 +96,14 @@ def relocate(result,source,original,edited):
     main=[x for x in original if MAIN_START<=x['offset']<MAIN_END];blob=bytearray();new={}
     for native in main:
         new[native['offset']]=RELOCATED_BASE+len(blob);blob.extend(encode(edited[native['id']]));blob.append(0)
-    if len(blob)>=0x8000:raise ValueError('El banco recolocado supera 32768 bytes')
-    result.extend(b'\xff'*(ROM_EXPANDED_SIZE-len(result)));result[RELOCATED_BASE:RELOCATED_BASE+len(blob)]=blob
+    if len(blob)>RELOCATED_END-RELOCATED_BASE:raise ValueError('El banco recolocado supera los 24576 bytes libres de la ROM')
+    if any(source[RELOCATED_BASE:RELOCATED_END]):raise ValueError('La zona interna reservada para textos no esta vacia')
+    result[RELOCATED_BASE:RELOCATED_END]=b'\0'*(RELOCATED_END-RELOCATED_BASE)
+    result[RELOCATED_BASE:RELOCATED_BASE+len(blob)]=blob
     result[TEXT_BASE_PATCH:TEXT_BASE_PATCH+4]=RELOCATED_BASE.to_bytes(4,'big')
     for p in range(POINTER_TABLE[0],POINTER_TABLE[1],2):
         old=MAIN_START+int.from_bytes(source[p:p+2],'big')
         if old in new:result[p:p+2]=(new[old]-RELOCATED_BASE).to_bytes(2,'big')
-    result[0x1a4:0x1a8]=(ROM_EXPANDED_SIZE-1).to_bytes(4,'big')
     return len(blob)
 
 def checksum(rom):return sum(struct.unpack('>'+str((len(rom)-0x200)//2)+'H',rom[0x200:]))&0xffff

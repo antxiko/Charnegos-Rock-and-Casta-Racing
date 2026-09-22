@@ -1,6 +1,6 @@
 <!doctype html><html lang="es"><meta charset="utf-8"><title>Editor de textos · Rock & Casta</title>
 <style>body{font:16px system-ui;background:#111a24;color:#eef;max-width:1100px;margin:25px auto;padding:20px}button,input,select,textarea{font:inherit;background:#223448;color:#fff;border:1px solid #68809b;border-radius:5px;padding:7px}button{cursor:pointer}textarea{width:100%;box-sizing:border-box;min-height:70px;font-family:Consolas,monospace}.row{background:#1b2938;padding:14px;margin:12px 0;border-radius:8px}.meta{color:#afc2d4;font-size:13px}.bad{outline:2px solid #ff6b6b}#status{position:sticky;bottom:0;background:#0a1119;padding:12px;color:#9fe2b1}</style>
-<h1>Editor de textos</h1><p>Selecciona <b>textos.json</b>, modifica las cadenas y descarga el fichero editado. Admite Ñ y vocales acentuadas; el importador recoloca el banco si una traducción crece.</p>
+<h1>Editor de textos</h1><p>Selecciona <b>textos.json</b>, modifica las cadenas y descarga el fichero editado. Admite Ñ y vocales acentuadas; el importador recoloca el banco dentro del mismo cartucho de 1 MiB si una traducción crece.</p>
 <input id="file" type="file" accept=".json"><select id="section"><option value="">Todas las secciones</option></select><input id="search" placeholder="Buscar"><button id="save" disabled>Descargar textos_editados.json</button>
 <main id="rows"></main><div id="status">Esperando textos.json</div>
 <script>
