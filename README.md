@@ -68,7 +68,7 @@ python tools/export_texts.py
 
 Eso saca 214 cadenas en `textos/textos.json`. Abre `textos/EDITOR.html`, carga el JSON y cambia lo que quieras. Después arrastra el fichero descargado sobre `textos/APLICAR_TEXTOS.cmd`.
 
-Hay que respetar el ancho de cada línea porque esto es una Mega Drive, no una marquesina del Carrefour. La fuente original tampoco tiene `Ñ` ni vocales con tilde: toca escribir `N` y tirar sin acentos hasta que ampliemos el juego de caracteres.
+Hay que respetar el ancho de cada pantalla porque esto es una Mega Drive, no una marquesina del Carrefour. El banco puede recolocarse automáticamente cuando una traducción crece y la fuente ya admite `Ñ` y vocales con tilde.
 
 ## Aquí no se reparte género robado
 

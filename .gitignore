@@ -47,6 +47,7 @@ textos/*
 !textos/EDITOR.html
 !textos/APLICAR_TEXTOS.cmd
 !textos/LEEME.md
+!textos/MAPA_ROM.md
 roms_editadas/
 
 # Local third-party checkout and Python/browser caches

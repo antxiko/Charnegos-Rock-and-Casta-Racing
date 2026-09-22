@@ -1,6 +1,7 @@
 """Extract and reinsert every editable text string from the European ROM."""
 from pathlib import Path
 import argparse, hashlib, json, re, struct
+from export_intro import resource_info, patch_resource
 
 ROOT=Path(__file__).resolve().parents[1]
 ROM=ROOT/"Rock 'n' Roll Racing (Europe).md"
@@ -16,6 +17,12 @@ SECTIONS=((0x398c,'status'),(0x39f4,'pilots'),(0x3c01,'planets'),
           (0x4485,'password'),(0x44c8,'options'),(0x4503,'league_and_names'),
           (0x45c8,'results'),(0x4658,'ending'),(0x4960,'credits'),
           (0x4bc1,'system'))
+POINTER_TABLE=(0x37ce,0x398c)
+TEXT_BASE_PATCH=0x3664
+RELOCATED_BASE=0x100000
+ROM_EXPANDED_SIZE=0x200000
+SPANISH={'Ñ':0x40,'ñ':0x40,'Á':0x5b,'á':0x5b,'É':0x5c,'é':0x5c,
+         'Í':0x5d,'í':0x5d,'Ó':0x5e,'ó':0x5e,'Ú':0x5f,'ú':0x5f}
 
 def section_for(offset):
     return max((name for start,name in SECTIONS if start<=offset),default='misc',key=lambda name:next(start for start,n in SECTIONS if n==name))
@@ -53,17 +60,50 @@ def make_row(start,end,raw,section):
                 line_widths=[len(x) for x in lines],text=raw.replace(b'\r',b'\n').decode('ascii'),
                 original_hex=raw.hex())
 
-def encode(row):
-    text=row['text']
-    try:data=text.replace('\r\n','\n').replace('\r','\n').encode('ascii').replace(b'\n',b'\r')
-    except UnicodeEncodeError as e:raise ValueError(f"{row['id']}: only ASCII is supported; use N instead of Ñ and omit accents") from e
-    lines=data.split(b'\r');widths=row['line_widths']
-    if len(lines)!=len(widths):raise ValueError(f"{row['id']}: requires {len(widths)} line(s), found {len(lines)}")
-    for i,(line,width) in enumerate(zip(lines,widths),1):
-        if len(line)>width:raise ValueError(f"{row['id']}: line {i} has {len(line)} chars; maximum {width}")
-    if len(data)>row['max_bytes']:raise ValueError(f"{row['id']}: {len(data)} bytes; maximum {row['max_bytes']}")
-    if any(b<32 or b>126 for b in data.replace(b'\r',b'')):raise ValueError(f"{row['id']}: unsupported control character")
+def encode(row,limit=None):
+    data=bytearray()
+    for char in row['text'].replace('\r\n','\n').replace('\r','\n'):
+        if char=='\n':data.append(13)
+        elif char in SPANISH:data.append(SPANISH[char])
+        elif 32<=ord(char)<=126:data.append(ord(char))
+        else:raise ValueError(f"{row['id']}: caracter no soportado {char!r}")
+    data=bytes(data);lines=data.split(b'\r');limits=row.get('max_line_chars',row['line_widths'])
+    if len(lines)!=len(limits):raise ValueError(f"{row['id']}: necesita {len(limits)} linea(s), hay {len(lines)}")
+    for i,(line,width) in enumerate(zip(lines,limits),1):
+        if len(line)>width:raise ValueError(f"{row['id']}: linea {i} tiene {len(line)} caracteres; maximo {width}")
+    if limit is not None and len(data)>limit:raise ValueError(f"{row['id']}: {len(data)} bytes; maximo fijo {limit}")
     return data
+
+def spanish_font(raw):
+    out=bytearray(raw)
+    def pixels(tile):
+        block=raw[tile*32:(tile+1)*32]
+        return [[(block[y*4+x//2]>>(0 if x&1 else 4))&15 for x in range(8)] for y in range(8)]
+    def packed(px):return bytes((px[y][x]<<4)|px[y][x+1] for y in range(8) for x in range(0,8,2))
+    for code,source,tilde in ((0x40,'N',True),(0x5b,'A',False),(0x5c,'E',False),(0x5d,'I',False),(0x5e,'O',False),(0x5f,'U',False)):
+        px=[[0]*8]+pixels(ord(source)-0x20)[:7]
+        if tilde:px[0][2:6]=[5,5,0,5]
+        else:px[0][3:5]=[5,5]
+        out[(code-0x20)*32:(code-0x1f)*32]=packed(px)
+    return bytes(out)
+
+def apply_spanish_font(rom,source):
+    for rid in (0,1):
+        info=resource_info(source,rid);patch_resource(rom,info,spanish_font(info['data']))
+
+def relocate(result,source,original,edited):
+    if source[TEXT_BASE_PATCH:TEXT_BASE_PATCH+4]!=MAIN_START.to_bytes(4,'big'):raise ValueError('Base original del banco no encontrada')
+    main=[x for x in original if MAIN_START<=x['offset']<MAIN_END];blob=bytearray();new={}
+    for native in main:
+        new[native['offset']]=RELOCATED_BASE+len(blob);blob.extend(encode(edited[native['id']]));blob.append(0)
+    if len(blob)>=0x8000:raise ValueError('El banco recolocado supera 32768 bytes')
+    result.extend(b'\xff'*(ROM_EXPANDED_SIZE-len(result)));result[RELOCATED_BASE:RELOCATED_BASE+len(blob)]=blob
+    result[TEXT_BASE_PATCH:TEXT_BASE_PATCH+4]=RELOCATED_BASE.to_bytes(4,'big')
+    for p in range(POINTER_TABLE[0],POINTER_TABLE[1],2):
+        old=MAIN_START+int.from_bytes(source[p:p+2],'big')
+        if old in new:result[p:p+2]=(new[old]-RELOCATED_BASE).to_bytes(2,'big')
+    result[0x1a4:0x1a8]=(ROM_EXPANDED_SIZE-1).to_bytes(4,'big')
+    return len(blob)
 
 def checksum(rom):return sum(struct.unpack('>'+str((len(rom)-0x200)//2)+'H',rom[0x200:]))&0xffff
 
@@ -74,14 +114,16 @@ def main():
     args=ap.parse_args();r=ROM.read_bytes()
     if hashlib.sha256(r).hexdigest()!=SHA:raise ValueError('Unexpected source ROM; European 1 MiB ROM required')
     original=entries(r)
+    section_limits={name:max(max(x['line_widths']) for x in original if x['section']==name) for _,name in SECTIONS}
+    for row in original:row['max_line_chars']=[section_limits[row['section']]]*len(row['line_widths'])
     if not args.import_file:
         OUT.mkdir(exist_ok=True)
-        doc=dict(format='Charnego Rock & Casta text v1',rom_sha256=SHA,
-                 encoding='ASCII; LF in JSON becomes 0x0D in ROM',strings=original)
+        doc=dict(format='Charnego Rock & Casta text v2',rom_sha256=SHA,
+                 encoding='ASCII + Ñ ñ Á á É é Í í Ó ó Ú ú; LF becomes 0x0D',strings=original)
         (OUT/'textos.json').write_text(json.dumps(doc,ensure_ascii=False,indent=2),encoding='utf-8')
         editable=[]
         for row in original:
-            editable.append(f"[{row['id']}] section={row['section']} offset=0x{row['offset']:06X} max={row['max_bytes']}")
+            editable.append(f"[{row['id']}] section={row['section']} offset=0x{row['offset']:06X} max_line={row['max_line_chars'][0]}")
             editable.append(row['text']);editable.append('')
         (OUT/'textos_lectura.txt').write_text('\n'.join(editable),encoding='utf-8')
         print(json.dumps(dict(strings=len(original),output=str(OUT/'textos.json'))))
@@ -91,18 +133,29 @@ def main():
     if not isinstance(edited,list):raise ValueError('Invalid strings list')
     by_id={x['id']:x for x in edited};expected={x['id'] for x in original}
     if set(by_id)!=expected:raise ValueError('String IDs differ from the original catalog')
-    result=bytearray(r);changed=[]
+    result=bytearray(r);changed=[];needs_relocation=False
     for native in original:
         row=by_id[native['id']]
-        for key in ('offset','max_bytes','line_widths','original_hex'):
+        for key in ('offset','max_bytes','line_widths','max_line_chars','original_hex'):
             if row.get(key)!=native[key]:raise ValueError(f"{native['id']}: protected field {key} changed")
         data=encode(row);start=native['offset'];size=native['max_bytes']
-        result[start:start+size+1]=data+b'\0'*(size+1-len(data))
+        if start<MAIN_END and len(data)>size:needs_relocation=True
+        elif start>=MAIN_END and len(data)>size:raise ValueError(f"{native['id']}: texto de sistema no recolocable")
         if data!=bytes.fromhex(native['original_hex']):changed.append(native['id'])
+    if needs_relocation:bank_size=relocate(result,r,original,by_id)
+    else:
+        bank_size=MAIN_END-MAIN_START
+        for native in original:
+            data=encode(by_id[native['id']],native['max_bytes']);result[native['offset']:native['offset']+native['max_bytes']+1]=data+b'\0'*(native['max_bytes']+1-len(data))
+    if needs_relocation:
+        for native in original:
+            if native['offset']>=MAIN_END:
+                data=encode(by_id[native['id']],native['max_bytes']);result[native['offset']:native['offset']+native['max_bytes']+1]=data+b'\0'*(native['max_bytes']+1-len(data))
+    if any(any(c in row['text'] for c in SPANISH) for row in edited):apply_spanish_font(result,r)
     if changed:result[0x18e:0x190]=checksum(result).to_bytes(2,'big')
     if args.output_rom.exists():raise FileExistsError(f'Output already exists: {args.output_rom}')
     args.output_rom.parent.mkdir(parents=True,exist_ok=True);args.output_rom.write_bytes(result)
-    print(json.dumps(dict(output=str(args.output_rom),changed=len(changed),changed_ids=changed,
+    print(json.dumps(dict(output=str(args.output_rom),changed=len(changed),changed_ids=changed,relocated=needs_relocation,text_bank_bytes=bank_size,
                           identical_to_original=bytes(result)==r,sha256=hashlib.sha256(result).hexdigest()),ensure_ascii=False))
 
 if __name__=='__main__':main()

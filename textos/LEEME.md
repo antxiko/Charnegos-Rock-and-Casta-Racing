@@ -12,18 +12,19 @@
 
 También puedes editar directamente `textos.json` con cualquier editor de texto. Modifica únicamente el campo `text`. Los campos `id`, `offset`, `max_bytes`, `line_widths` y `original_hex` protegen la estructura de la ROM y el importador comprueba que no hayan cambiado.
 
-## Límites
+## Límites y recolocación
 
 - Conserva el número de líneas de cada cadena.
-- Cada línea debe caber en el ancho indicado por `line_widths`.
-- Usa caracteres ASCII. La fuente original no dispone directamente de `Ñ` ni vocales acentuadas; usa `N` y vocales sin tilde.
+- Cada línea debe caber en el ancho indicado por `max_line_chars`. Ese límite pertenece a la pantalla, no al antiguo hueco de la cadena.
+- Se admiten `Ñ`, `ñ`, `Á`, `á`, `É`, `é`, `Í`, `í`, `Ó`, `ó`, `Ú` y `ú`. La fuente se amplía automáticamente al usarlos.
 - Los saltos de línea del JSON se convierten al byte `0x0D` usado por el juego.
-- Una traducción más corta se rellena internamente con ceros sin mover las cadenas siguientes.
+- Si todo cabe, la ROM conserva su tamaño y sus direcciones originales. Si una cadena crece, el banco completo se recoloca automáticamente y la ROM se amplía a 2 MiB.
 
-La herramienta mantiene todas las direcciones originales. De esta forma también funcionan las cadenas accedidas mediante desplazamientos o tablas no relocables. Si una traducción no cabe, hay que abreviarla; la recolocación de todo el banco requeriría modificar referencias dentro del código 68000.
+La distribución, los punteros y la zona ampliada están documentados en `MAPA_ROM.md`.
 
 ## Comprobaciones
 
 - Exportar y reinsertar las 214 cadenas sin cambios produce una ROM idéntica byte a byte.
 - Al modificar textos, se actualiza el checksum del encabezado de Mega Drive.
+- Una prueba en BizHawk confirmó el banco recolocado y la `Ñ` dibujada por la fuente nueva.
 - La ROM original nunca se sobrescribe y el archivo de salida debe ser nuevo.
