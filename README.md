@@ -9,6 +9,7 @@ El proyecto permite extraer, editar y reinsertar:
 - samples de voz PCM;
 - tiles, decorados y mapas de los 72 circuitos;
 - las seis músicas del driver Sound Images v1.20;
+- las 214 cadenas de interfaz, diálogos, finales y créditos;
 - MIDI y secuencias nativas editables;
 - capturas VGM y proyectos para Furnace Tracker.
 
@@ -27,6 +28,7 @@ python tools/export_faces.py
 python tools/export_samples.py
 python tools/export_all_tracks.py
 python tools/export_music.py --export
+python tools/export_texts.py
 ```
 
 Para generar VGM y módulos Furnace se necesita también [vgm2fur](https://github.com/std282/vgm2fur):
