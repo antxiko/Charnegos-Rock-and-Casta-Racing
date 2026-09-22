@@ -19,6 +19,15 @@ Cuando una traducción supera su hueco original, la herramienta utiliza un bloqu
 
 El importador verifica primero que toda la zona siga llena de ceros, reconstruye el banco, actualiza las 213 referencias, cambia la base del código 68000 y recalcula el checksum. La ROM conserva exactamente su tamaño original de 1 MiB. Si los textos superan 24576 bytes, la herramienta se detiene.
 
+## Segundo hueco confirmado
+
+- Dirección: `0x015A7B-0x018FFF`.
+- Tamaño: 13701 bytes.
+- Uso actual: ninguno; reservado para futuras ampliaciones sin aumentar la ROM.
+- Límite posterior: el driver Z80 Sound Images comienza en `0x019000`.
+
+La zona es completamente cero en la ROM original. El desensamblado no encontró saltos, llamadas ni referencias 68000 hacia su interior. Para validarla se creó una ROM temporal rellenando los 13701 bytes con el patrón alterno `5A/A5`. Tras actualizar el checksum, cinco puntos de la cinemática final y cuatro estados distintos de carrera produjeron capturas idénticas a la ROM original en BizHawk. Esta prueba confirma el uso observado en emulación; no sustituye una futura prueba completa en cartucho físico.
+
 ## Fuente castellana
 
 Las fuentes comprimidas son los recursos 0 y 1. Se reutilizan seis posiciones ASCII que el juego original no emplea:
