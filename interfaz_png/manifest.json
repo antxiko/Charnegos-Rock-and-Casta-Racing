@@ -1,0 +1,23 @@
+{
+  "menus": [
+    5,
+    7,
+    16,
+    17,
+    18
+  ],
+  "menu_graphics": 3,
+  "virgin": {
+    "graphics": 186,
+    "map": 187,
+    "palette": 188
+  },
+  "hud_graphics": [
+    179,
+    181,
+    182,
+    183,
+    189
+  ],
+  "rom_sha256": "b65b7de45420e7618fef1b9bef13076389fdf7e0da8dfec1de23f528dcd170cb"
+}

@@ -1,4 +1,4 @@
-"""Export and reinsert the editable graphics used by the ending cinematic."""
+﻿"""Export and reinsert the editable graphics used by the ending cinematic."""
 from pathlib import Path
 import argparse, hashlib, json, struct
 from PIL import Image
@@ -8,12 +8,15 @@ from export_intro import SHA, resource_info, flat_palette, colors, native_pixels
 OUT = ROOT / 'final_png'
 PLANET_RED = bytes.fromhex('00000004000200020004000400060008000a000a000c000c000e004e006e00ae')
 PLANET_GREEN = bytes.fromhex('0000002000600040004000200020080006000600040004000640066208640884')
+CITY_BUILDING_PALETTE = bytes.fromhex('0000008e00ee00ae006e000c004e0ec00a800860064004200200000000ee0eee00000c200e0e0e600a200820060004000200000000000aaa088806660444022200000888066606660444044402220222000000000eee000000000000000e008800000e660e660c440a440822062204200200000000000e0e000000000e000000')
+BUILDING_214 = ((0,0,4,4,0,2),(32,0,4,4,16,2),(64,0,4,4,32,2),(96,0,3,4,48,2),(24,32,2,2,60,2),(40,32,4,2,64,3),(72,32,4,2,72,3),(104,32,2,2,80,2),(0,48,4,4,84,2),(32,48,4,4,100,2),(64,48,4,4,116,2),(96,48,3,4,132,2),(24,80,1,4,144,2),(32,80,4,4,148,3),(64,80,4,4,164,3),(96,80,3,4,180,3),(24,112,4,3,192,3),(56,112,4,3,204,3),(88,112,4,3,216,3))
+ENDING_REPLAYS = {215:'01_CHEM_VI',216:'02_DRAKONIS',217:'03_BOGMIRE',218:'04_NEW_MOJAVE',219:'05_NHO',220:'06_INFERNO'}
 SCENES = {
     '01_hangar': dict(gfx=190, maps=[(191,64,28),(192,64,28)], palette=196, palette_parts=[], extras=[193,194,197,198,199,200]),
     # The planet keeps the 64-colour CRAM from the hangar and updates line 0 with resource 203.
     '02_planeta': dict(gfx=201, maps=[(202,64,28)], palette=196, palette_parts=[203], extras=[],planet=True),
-    '03_ciudad': dict(gfx=204, maps=[(205,64,32),(206,32,32)], palette=207, palette_parts=[], extras=[]),
-    '04_escenario': dict(gfx=208, maps=[(209,32,64),(211,32,64)], palette=210, palette_parts=[213,2], extras=[212,214],stage=True,scripts=[215,216,217,218,219,220]),
+    '03_ciudad': dict(gfx=204, maps=[(205,64,32),(206,32,32)], palette=207, palette_parts=[], extras=[214]),
+    '04_escenario': dict(gfx=208, maps=[(209,32,64),(211,32,64)], palette=210, palette_parts=[213,2], extras=[212],stage=True,scripts=[215,216,217,218,219,220]),
 }
 
 def padded_palette(raw): return raw + b'\0'*(128-len(raw))
@@ -93,6 +96,33 @@ def encode_sprite_24(im):
       px=[[im.getpixel((ox+x,oy+y))&15 for x in range(8)] for y in range(8)];out.extend(tile_bytes(px))
     return bytes(out)
 
+def building_214(data):
+    im=Image.new('P',(120,136));im.putpalette(flat_palette(CITY_BUILDING_PALETTE));im.info['transparency']=0
+    for ox,oy,w,h,start,line in BUILDING_214:
+      for tx in range(w):
+       for ty in range(h):
+        raw=data[(start+tx*h+ty)*32:(start+tx*h+ty+1)*32]
+        for y in range(8):
+         for x in range(4):
+          b=raw[y*4+x];im.putpixel((ox+tx*8+x*2,oy+ty*8+y),line*16+(b>>4));im.putpixel((ox+tx*8+x*2+1,oy+ty*8+y),line*16+(b&15))
+    return im
+
+def encode_building_214(im):
+    out=[None]*228
+    for ox,oy,w,h,start,line in BUILDING_214:
+      for tx in range(w):
+       for ty in range(h):
+        px=[]
+        for y in range(8):
+          row=[]
+          for x in range(8):
+            p=im.getpixel((ox+tx*8+x,oy+ty*8+y))
+            if p&15 and p//16!=line:raise ValueError(f'Paleta incorrecta en edificio 214: se esperaba linea {line}, aparece {p//16}')
+            row.append(p&15)
+          px.append(row)
+        out[start+tx*h+ty]=tile_bytes(px)
+    return b''.join(out)
+
 def export(rom):
     OUT.mkdir(exist_ok=True);manifest=[]
     for name,s in SCENES.items():
@@ -113,11 +143,13 @@ def export(rom):
           atlas.save(folder/'personajes_montados.png')
           Image.open(characters/'personaje_06.png').save(folder/'presentador_montado.png',transparency=0)
         elif rid==214:
-          tiles(raw,flat_palette(pal),16).save(folder/'tiles_crudos_carrera_214.png')
+          building_214(raw).save(folder/'edificio_ciudad_214.png',transparency=0)
+          (folder/'paleta_edificio_214.bin').write_bytes(CITY_BUILDING_PALETTE)
+          write_gpl(folder/'paleta_edificio_214.gpl','edificio_ciudad_214',CITY_BUILDING_PALETTE)
         else:
           tiles(raw,flat_palette(pal),16).save(folder/f'tiles_animacion_{rid}.png')
       for rid in s.get('scripts',[]):
-        (folder/f'datos_secuencia_{rid}.bin').write_bytes(resource_info(rom,rid)['data'])
+        (folder/f'repeticion_{ENDING_REPLAYS[rid]}_{rid}.bin').write_bytes(resource_info(rom,rid)['data'])
       (folder/f'paleta_{s["palette"]}.bin').write_bytes(pr)
       (folder/f'paleta_{s["palette"]}.gpl').write_text('GIMP Palette\nName: '+name+'\nColumns: 16\n#\n'+'\n'.join(f'{a} {b} {c} indice_{i:02d}' for i,(a,b,c) in enumerate(colors(pal)[:len(pr)//2])),encoding='ascii')
       for pid in s['palette_parts']:
@@ -160,7 +192,7 @@ def import_edits(source,folder,target):
             for j in range(4):chunks.append(encode_sprite_24(im.crop(((j%2)*24,(j//2)*24,(j%2+1)*24,(j//2+1)*24))))
           data=b''.join(chunks)
         elif rid==214:
-          data=tile_sheet_to_bytes(base/'tiles_crudos_carrera_214.png',len(info['data'])//32,pal)
+          data=encode_building_214(native_pixels(base/'edificio_ciudad_214.png',CITY_BUILDING_PALETTE))
         else:
           data=tile_sheet_to_bytes(base/f'tiles_animacion_{rid}.png',len(info['data'])//32,pal)
         if data!=info['data']:changes.append((name,rid,patch_resource(rom,info,data)))

@@ -52,6 +52,7 @@ intro_png/captura/
 intro_png/capture_*.lua
 intro_png/render_*.png
 !final_png/**
+!interfaz_png/**
 !todos_los_circuitos/**
 todos_los_circuitos/verificacion/
 

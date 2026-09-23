@@ -40,7 +40,9 @@
       ],
       "palette": 207,
       "palette_updates": [],
-      "extras": []
+      "extras": [
+        214
+      ]
     },
     {
       "scene": "04_escenario",
@@ -55,8 +57,7 @@
         2
       ],
       "extras": [
-        212,
-        214
+        212
       ]
     }
   ]
