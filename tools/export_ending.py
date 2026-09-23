@@ -102,16 +102,20 @@ def export(rom):
       composite(layers).save(folder/'montaje_referencia.png')
       tiles(gfx,flat_palette(pal),16).save(folder/f'tiles_principales_{s["gfx"]}.png')
       for rid in s['extras']:
-        raw=resource_info(rom,rid)['data'];tiles(raw,flat_palette(pal),16).save(folder/f'tiles_animacion_{rid}.png')
+        raw=resource_info(rom,rid)['data']
         if rid==212:
-          sprites=folder/'sprites_24x24';sprites.mkdir(exist_ok=True)
-          atlas=Image.new('P',(7*24,4*24));atlas.putpalette(flat_palette(pal));atlas.info['transparency']=0
-          for j in range(28):
-            sp=sprite_24(raw,pal,j);sp.save(sprites/f'sprite_{j:02d}.png',transparency=0);atlas.paste(sp,((j%7)*24,(j//7)*24))
-          atlas.save(folder/'sprites_24x24_todos.png',transparency=0)
-          presenter=Image.new('P',(48,48));presenter.putpalette(flat_palette(pal));presenter.info['transparency']=0
-          for j in range(4):presenter.paste(sprite_24(raw,pal,24+j),((j%2)*24,(j//2)*24))
-          presenter.save(folder/'presentador_montado.png',transparency=0)
+          variants=resource_info(rom,213)['data'];characters=folder/'personajes_48x48';characters.mkdir(exist_ok=True)
+          atlas=Image.new('RGBA',(7*48,48))
+          for c in range(7):
+            cp=padded_palette(variants[c*32:(c+1)*32]);character=Image.new('P',(48,48));character.putpalette(flat_palette(cp));character.info['transparency']=0
+            for j in range(4):character.paste(sprite_24(raw,cp,c*4+j),((j%2)*24,(j//2)*24))
+            character.save(characters/f'personaje_{c:02d}.png',transparency=0);atlas.alpha_composite(character.convert('RGBA'),(c*48,0))
+          atlas.save(folder/'personajes_montados.png')
+          Image.open(characters/'personaje_06.png').save(folder/'presentador_montado.png',transparency=0)
+        elif rid==214:
+          tiles(raw,flat_palette(pal),16).save(folder/'tiles_crudos_carrera_214.png')
+        else:
+          tiles(raw,flat_palette(pal),16).save(folder/f'tiles_animacion_{rid}.png')
       for rid in s.get('scripts',[]):
         (folder/f'datos_secuencia_{rid}.bin').write_bytes(resource_info(rom,rid)['data'])
       (folder/f'paleta_{s["palette"]}.bin').write_bytes(pr)
@@ -147,11 +151,18 @@ def import_edits(source,folder,target):
       for tile,raw in updates.items():data[(tile-32)*32:(tile-31)*32]=raw
       if data!=gi['data']:changes.append((name,s['gfx'],patch_resource(rom,gi,data)))
       for rid in s['extras']:
-        info=resource_info(source,rid);data=tile_sheet_to_bytes(base/f'tiles_animacion_{rid}.png',len(info['data'])//32,pal)
+        info=resource_info(source,rid)
         if rid==212:
           chunks=[]
-          for j in range(28):chunks.append(encode_sprite_24(native_pixels(base/'sprites_24x24'/f'sprite_{j:02d}.png',pal)))
+          variants=resource_info(source,213)['data']
+          for c in range(7):
+            cp=padded_palette(variants[c*32:(c+1)*32]);im=native_pixels(base/'personajes_48x48'/f'personaje_{c:02d}.png',cp)
+            for j in range(4):chunks.append(encode_sprite_24(im.crop(((j%2)*24,(j//2)*24,(j%2+1)*24,(j//2+1)*24))))
           data=b''.join(chunks)
+        elif rid==214:
+          data=tile_sheet_to_bytes(base/'tiles_crudos_carrera_214.png',len(info['data'])//32,pal)
+        else:
+          data=tile_sheet_to_bytes(base/f'tiles_animacion_{rid}.png',len(info['data'])//32,pal)
         if data!=info['data']:changes.append((name,rid,patch_resource(rom,info,data)))
     if changes:rom[0x18e:0x190]=(sum(struct.unpack('>'+str((len(rom)-512)//2)+'H',rom[512:]))&65535).to_bytes(2,'big')
     if target.exists():raise FileExistsError(target)
