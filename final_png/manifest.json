@@ -46,11 +46,18 @@
       "scene": "04_escenario",
       "graphics": 208,
       "maps": [
-        209
+        209,
+        211
       ],
       "palette": 210,
-      "palette_updates": [],
-      "extras": []
+      "palette_updates": [
+        213,
+        2
+      ],
+      "extras": [
+        212,
+        214
+      ]
     }
   ]
 }

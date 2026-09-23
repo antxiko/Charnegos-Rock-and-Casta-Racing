@@ -1,0 +1,20 @@
+GIMP Palette
+Name: final_personaje_06
+Columns: 16
+#
+0 0 0 indice_00
+0 72 0 indice_01
+255 182 109 indice_02
+218 145 72 indice_03
+182 109 36 indice_04
+145 72 0 indice_05
+109 36 0 indice_06
+72 0 0 indice_07
+255 218 0 indice_08
+218 145 0 indice_09
+36 36 36 indice_10
+0 145 0 indice_11
+0 109 0 indice_12
+72 72 72 indice_13
+145 145 145 indice_14
+218 218 218 indice_15

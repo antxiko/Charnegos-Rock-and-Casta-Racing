@@ -1,0 +1,20 @@
+GIMP Palette
+Name: final_personajes_base
+Columns: 16
+#
+0 255 0 indice_00
+255 0 0 indice_01
+218 0 0 indice_02
+145 0 0 indice_03
+109 0 0 indice_04
+255 255 255 indice_05
+182 182 182 indice_06
+145 145 145 indice_07
+109 109 109 indice_08
+36 36 36 indice_09
+0 0 0 indice_10
+0 0 72 indice_11
+0 72 218 indice_12
+255 182 0 indice_13
+255 255 0 indice_14
+0 182 0 indice_15

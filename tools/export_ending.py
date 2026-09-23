@@ -11,17 +11,24 @@ PLANET_GREEN = bytes.fromhex('00000020006000400040002000200800060006000400040006
 SCENES = {
     '01_hangar': dict(gfx=190, maps=[(191,64,28),(192,64,28)], palette=196, palette_parts=[], extras=[193,194,197,198,199,200]),
     # The planet keeps the 64-colour CRAM from the hangar and updates line 0 with resource 203.
-    '02_planeta': dict(gfx=201, maps=[(202,64,28)], palette=196, palette_parts=[203], extras=[]),
+    '02_planeta': dict(gfx=201, maps=[(202,64,28)], palette=196, palette_parts=[203], extras=[],planet=True),
     '03_ciudad': dict(gfx=204, maps=[(205,64,32),(206,32,32)], palette=207, palette_parts=[], extras=[]),
-    '04_escenario': dict(gfx=208, maps=[(209,64,32)], palette=210, palette_parts=[], extras=[]),
+    '04_escenario': dict(gfx=208, maps=[(209,64,32),(211,64,32)], palette=210, palette_parts=[213,2], extras=[212,214],stage=True,scripts=[215,216,217,218,219,220]),
 }
 
 def padded_palette(raw): return raw + b'\0'*(128-len(raw))
 
+def write_gpl(path,name,raw):
+    count=len(raw)//2
+    path.write_text('GIMP Palette\nName: '+name+'\nColumns: 16\n#\n'+'\n'.join(f'{a} {b} {c} indice_{i:02d}' for i,(a,b,c) in enumerate(colors(padded_palette(raw))[:count])),encoding='ascii')
+
 def scene_palette(rom,s):
     pal=bytearray(padded_palette(resource_info(rom,s['palette'])['data']))
     # The cinematic generates two colour-cycle phases for the planet at runtime.
-    if s['palette_parts']:pal[96:128]=PLANET_RED
+    if s.get('planet'):pal[96:128]=PLANET_RED
+    if s.get('stage'):
+        pal[0:32]=resource_info(rom,213)['data'][-32:]
+        pal[32:64]=resource_info(rom,2)['data']
     return bytes(pal)
 
 def render_layer(mapdata,gfx,pal,w,h):
@@ -70,6 +77,22 @@ def tile_sheet_to_bytes(path,count,pal):
       out.extend(tile_bytes(px))
     return bytes(out)
 
+def sprite_24(data,pal,index):
+    im=Image.new('P',(24,24));im.putpalette(flat_palette(pal));im.info['transparency']=0
+    for t in range(9):
+      raw=data[(index*9+t)*32:(index*9+t+1)*32];ox=(t//3)*8;oy=(t%3)*8
+      for y in range(8):
+       for x in range(4):
+        b=raw[y*4+x];im.putpixel((ox+x*2,oy+y),b>>4);im.putpixel((ox+x*2+1,oy+y),b&15)
+    return im
+
+def encode_sprite_24(im):
+    out=bytearray()
+    for t in range(9):
+      ox=(t//3)*8;oy=(t%3)*8
+      px=[[im.getpixel((ox+x,oy+y))&15 for x in range(8)] for y in range(8)];out.extend(tile_bytes(px))
+    return bytes(out)
+
 def export(rom):
     OUT.mkdir(exist_ok=True);manifest=[]
     for name,s in SCENES.items():
@@ -80,12 +103,32 @@ def export(rom):
       tiles(gfx,flat_palette(pal),16).save(folder/f'tiles_principales_{s["gfx"]}.png')
       for rid in s['extras']:
         raw=resource_info(rom,rid)['data'];tiles(raw,flat_palette(pal),16).save(folder/f'tiles_animacion_{rid}.png')
+        if rid==212:
+          sprites=folder/'sprites_24x24';sprites.mkdir(exist_ok=True)
+          atlas=Image.new('P',(7*24,4*24));atlas.putpalette(flat_palette(pal));atlas.info['transparency']=0
+          for j in range(28):
+            sp=sprite_24(raw,pal,j);sp.save(sprites/f'sprite_{j:02d}.png',transparency=0);atlas.paste(sp,((j%7)*24,(j//7)*24))
+          atlas.save(folder/'sprites_24x24_todos.png',transparency=0)
+          presenter=Image.new('P',(48,48));presenter.putpalette(flat_palette(pal));presenter.info['transparency']=0
+          for j in range(4):presenter.paste(sprite_24(raw,pal,24+j),((j%2)*24,(j//2)*24))
+          presenter.save(folder/'presentador_montado.png',transparency=0)
+      for rid in s.get('scripts',[]):
+        (folder/f'datos_secuencia_{rid}.bin').write_bytes(resource_info(rom,rid)['data'])
       (folder/f'paleta_{s["palette"]}.bin').write_bytes(pr)
       (folder/f'paleta_{s["palette"]}.gpl').write_text('GIMP Palette\nName: '+name+'\nColumns: 16\n#\n'+'\n'.join(f'{a} {b} {c} indice_{i:02d}' for i,(a,b,c) in enumerate(colors(pal)[:len(pr)//2])),encoding='ascii')
       for pid in s['palette_parts']:
         part=resource_info(rom,pid)['data'];(folder/f'actualizacion_paleta_{pid}.bin').write_bytes(part)
+        if name=='04_escenario' and pid==213:
+          variants=folder/'paletas_personajes';variants.mkdir(exist_ok=True)
+          for j in range(len(part)//32):
+            chunk=part[j*32:(j+1)*32]
+            (variants/f'personaje_{j:02d}.bin').write_bytes(chunk)
+            write_gpl(variants/f'personaje_{j:02d}.gpl',f'final_personaje_{j:02d}',chunk)
+        if name=='04_escenario' and pid==2:
+          write_gpl(folder/'paleta_personajes_base_2.gpl','final_personajes_base',part)
       if s['palette_parts']:
         (folder/'paleta_efectiva.gpl').write_text('GIMP Palette\nName: '+name+'_efectiva\nColumns: 16\n#\n'+'\n'.join(f'{a} {b} {c} indice_{i:02d}' for i,(a,b,c) in enumerate(colors(pal))),encoding='ascii')
+      if s.get('planet'):
         green=bytearray(pal);green[96:128]=PLANET_GREEN
         for phase,value in [('roja',pal),('verde',bytes(green))]:
           (folder/f'paleta_fase_{phase}.bin').write_bytes(value)
@@ -105,6 +148,10 @@ def import_edits(source,folder,target):
       if data!=gi['data']:changes.append((name,s['gfx'],patch_resource(rom,gi,data)))
       for rid in s['extras']:
         info=resource_info(source,rid);data=tile_sheet_to_bytes(base/f'tiles_animacion_{rid}.png',len(info['data'])//32,pal)
+        if rid==212:
+          chunks=[]
+          for j in range(28):chunks.append(encode_sprite_24(native_pixels(base/'sprites_24x24'/f'sprite_{j:02d}.png',pal)))
+          data=b''.join(chunks)
         if data!=info['data']:changes.append((name,rid,patch_resource(rom,info,data)))
     if changes:rom[0x18e:0x190]=(sum(struct.unpack('>'+str((len(rom)-512)//2)+'H',rom[512:]))&65535).to_bytes(2,'big')
     if target.exists():raise FileExistsError(target)
