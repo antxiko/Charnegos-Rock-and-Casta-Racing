@@ -13,7 +13,7 @@ SCENES = {
     # The planet keeps the 64-colour CRAM from the hangar and updates line 0 with resource 203.
     '02_planeta': dict(gfx=201, maps=[(202,64,28)], palette=196, palette_parts=[203], extras=[],planet=True),
     '03_ciudad': dict(gfx=204, maps=[(205,64,32),(206,32,32)], palette=207, palette_parts=[], extras=[]),
-    '04_escenario': dict(gfx=208, maps=[(209,64,32),(211,64,32)], palette=210, palette_parts=[213,2], extras=[212,214],stage=True,scripts=[215,216,217,218,219,220]),
+    '04_escenario': dict(gfx=208, maps=[(209,32,64),(211,32,64)], palette=210, palette_parts=[213,2], extras=[212,214],stage=True,scripts=[215,216,217,218,219,220]),
 }
 
 def padded_palette(raw): return raw + b'\0'*(128-len(raw))

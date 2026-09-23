@@ -17,7 +17,7 @@ Cada escena contiene sus capas como PNG indexados, los tiles originales y las pa
 
 En el planeta, `paleta_fase_roja` corresponde al plano rojo mostrado al principio y `paleta_fase_verde` a la transformación posterior. Ambas se capturaron directamente de CRAM en BizHawk. El PNG editable usa la fase roja.
 
-En el escenario, `capa_01_mapa_209.png` contiene el escenario y `capa_02_mapa_211.png` el público delantero. Los PNG de `sprites_24x24` son las piezas editables del recurso 212; los cuatro últimos forman `presentador_montado.png`. `paletas_personajes` separa las siete paletas del recurso 213. Los ficheros `datos_secuencia_215.bin` a `220.bin` gobiernan las seis variantes de la carrera de exhibición y se conservan aparte para estudiarlas sin confundirlas con gráficos.
+En el escenario, `capa_01_mapa_209.png` contiene el escenario y `capa_02_mapa_211.png` el público delantero. Ambos mapas miden 32x64 tiles (256x512 píxeles) y conservan la zona vertical que recorre la cámara. Los PNG de `sprites_24x24` son las piezas editables del recurso 212; los cuatro últimos forman `presentador_montado.png`. `paletas_personajes` separa las siete paletas del recurso 213. Los ficheros `datos_secuencia_215.bin` a `220.bin` gobiernan las seis variantes de la carrera de exhibición y se conservan aparte para estudiarlas sin confundirlas con gráficos.
 
 No cambies el tamaño de los PNG ni reorganices sus índices de color. Para crear otra ROM:
 
